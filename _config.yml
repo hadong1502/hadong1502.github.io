@@ -7,7 +7,8 @@ first_name: Ha
 middle_name: N.
 last_name: Dong
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  "One wants all the powers of mind and spirit and sense to be awakened to new alertness and rise to new confidence, 
+  because that is the only way we realized all the possibilities within us." - P. Pouncey, 16th President of Amherst College
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
@@ -191,6 +192,19 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  #########
+  # Blog
+  - _posts
+  - _pages/blog.md
+  # News
+  - _news
+  - _includes/news.liquid
+  # Projects
+  - _projects 
+  - _pages/projects.md
+  # Repo
+  - _pages/repositories.md
+  - _includes/repository/
 keep_files:
   - CNAME
   - .nojekyll
