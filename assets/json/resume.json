@@ -314,9 +314,10 @@
       "name": "Biological Systems",
       "icon": "",
       "keywords": [
-        "Neuroscience",
         "Electrophysiology",
-        "Behavioral Biology"
+        "Behavioral Biology",
+        "Neurodegenerative diseases",
+        "Theoretical Neuroscience"
       ]
     },
     {
@@ -324,14 +325,14 @@
       "icon": "",
       "keywords": [
         "Reinforcement Learning",
-        "Graph ML",
-        "Hidden Markov Models"
+        "Graph Neural Networks",
+        "Artificial Neural Networks"
       ]
     }
   ],
   "projects": [
     {
-      "name": "Does HMAX Subject to Müller-Lyer Illusion?",
+      "name": "Does HMAX Subject to Müller-Lyer Illusion? @ Harvard Neuro240",
       "summary": "Trained an SVM on HMAX embeddings for length classification and evaluated its performance on an illusion dataset, observing human-like perceptual biases.",
       "highlights": [],
       "startDate": "2025-01-01",
@@ -339,15 +340,15 @@
       "url": ""
     },
     {
-      "name": "Forecasting Bioactivity: Building Predictive Models for Drug Discovery",
-      "summary": "Collaborated on generating ensemble models for bioactivity endpoints targeting serotonin and dopamine receptors using ChEMBL data during an Alkermes plc internship.",
+      "name": "Forecasting Bioactivity: Building Predictive Models for Drug Discovery @ Alkermes Plc",
+      "summary": "Collaborated on generating ensemble models for bioactivity endpoints targeting serotonin and dopamine receptors using ChEMBL data during my internship.",
       "highlights": [],
       "startDate": "2024-01-01",
       "endDate": "2024-12-31",
       "url": ""
     },
     {
-      "name": "Biology Focus Group",
+      "name": "Biology Focus Group @ Amherst College Biology Department DEI Committee",
       "summary": "Led research and data analysis on access to learning for underrepresented students; conducted 10+ focus groups informing departmental pedagogical improvements.",
       "highlights": [],
       "startDate": "2023-01-01",
