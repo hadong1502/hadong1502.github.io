@@ -22,7 +22,7 @@
       }
     ]
   },
-  "work": [
+  "research": [
     {
       "name": "Trapani Lab, Neuroscience Department, Amherst College",
       "position": "Gregory S. Call Research Fellow / Thesis Student",
@@ -336,7 +336,7 @@
       "summary": "Trained an SVM on HMAX embeddings for length classification and evaluated its performance on an illusion dataset, observing human-like perceptual biases.",
       "highlights": [],
       "startDate": "2025",
-      "endDate": "2025",
+      // "endDate": "2025",
       "url": ""
     },
     {
@@ -344,7 +344,7 @@
       "summary": "Collaborated on generating ensemble models for bioactivity endpoints targeting serotonin and dopamine receptors using ChEMBL data during my internship.",
       "highlights": [],
       "startDate": "2024",
-      "endDate": "2024",
+      // "endDate": "2024",
       "url": ""
     },
     {
@@ -352,7 +352,7 @@
       "summary": "Led research and data analysis on access to learning for underrepresented students; conducted 10+ focus groups informing departmental pedagogical improvements.",
       "highlights": [],
       "startDate": "2023",
-      "endDate": "2023",
+      // "endDate": "2023",
       "url": ""
     },
     {
@@ -360,7 +360,7 @@
       "summary": "Founded a non-profit that delivered free advanced biology courses to 23 high schools, resulting in 78 national and 3 international Olympiad medals.",
       "highlights": [],
       "startDate": "2019",
-      "endDate": "2022",
+      // "endDate": "2022",
       "url": ""
     }
   ]
