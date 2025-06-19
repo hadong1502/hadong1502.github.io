@@ -27,7 +27,7 @@
       "name": "Trapani Lab, Neuroscience Department, Amherst College",
       "position": "Gregory S. Call Research Fellow / Thesis Student",
       "url": "https://www.trapanilab.com/",
-      "startDate": "2023-11-01",
+      "startDate": "2023-11",
       "endDate": "present",
       "summary": "Investigating the neural encoding of long latency and short latency C-start startles in zebrafish (Danio rerio) using high-speed video and electrophysiology.",
       "highlights": ["Electrophysiology", "Data Analysis"]
@@ -36,8 +36,8 @@
       "name": "Meister Lab, Biology and Biological Engineering Department, California Institute of Technology",
       "position": "Summer Undergraduate Research Fellow",
       "url": "https://meisterlab.caltech.edu/",
-      "startDate": "2024-06-01",
-      "endDate": "2024-09-01",
+      "startDate": "2024-06",
+      "endDate": "2024-09",
       "summary": "Studied naturalistic hunting behaviors in mice using multi-channel electrophysiology, behavioral recording, and machine learning.",
       "highlights": ["NeuroPixels", "Behavioral Assays", "Markov Models"]
     },
@@ -45,7 +45,7 @@
       "name": "Murthy Lab, Center for Brain Science, Harvard University",
       "position": "Undergraduate Research Intern",
       "url": "https://vnmurthylab.org/",
-      "startDate": "2025-02-01",
+      "startDate": "2025-02",
       "endDate": "present",
       "summary": "Developing reinforcement learning models for understanding odor-guided trail following behavior in mice and studying the role of multimodal sensory integration during reward search",
       "highlights": ["Reinforcement Learning", "Behavioral Analysis"]
@@ -54,7 +54,7 @@
       "name": "Meiler Lab, Chemistry Department, Vanderbilt University",
       "position": "Undergraduate Researcher",
       "url": "https://www.vanderbilt.edu/chemistry/",
-      "startDate": "2023-05-01",
+      "startDate": "2023-05",
       "endDate": "present",
       "summary": "Co-authored WelQrate, a comprehensive open-source library with high-quality HTS datasets and novel graph featurization methods for drug discovery",
       "highlights": ["Co-authored two publications on NeurIPS 2024 and JCIM", "Computational Chemistry", "Geometric Deep Learning", "Data Curation Methodologies"]
@@ -67,8 +67,8 @@
       "url": "https://www.amherst.edu/",
       "area": "Neuroscience, Physics, Mathematics",
       "studyType": "BA (Honor)",
-      "startDate": "2022-09-01",
-      "endDate": "2026-05-01",
+      "startDate": "2022-09",
+      "endDate": "2026-05",
       "score": "3.85/4.0",
       "courses": []
     },
@@ -78,8 +78,8 @@
       "url": "https://www.harvard.edu/",
       "area": "Visiting Student (Spring 2025)",
       "studyType": "Visiting Undergraduate Student Program",
-      "startDate": "2025-02-01",
-      "endDate": "2025-06-01",
+      "startDate": "2025-02",
+      "endDate": "2025-06",
       "score": "",
       "courses": []
     }
@@ -87,97 +87,97 @@
   "awards": [
     {
       "title": "Charles Hamilton Houston Summer Research Grant",
-      "date": "2025-06-01",
+      "date": "2025",
       "awarder": "Amherst College",
       "summary": ""
     },
     {
       "title": "Scholar Award, NeurIPS",
-      "date": "2024-12-01",
+      "date": "2024",
       "awarder": "NeurIPS Conference",
       "summary": ""
     },
     {
       "title": "Gregory S. Call Student Research Grant",
-      "date": "2024-05-01",
+      "date": "2024",
       "awarder": "Office of the Provost and Dean of the Faculty, Amherst College",
       "summary": ""
     },
     {
       "title": "Meiklejohn Summer Research Grant",
-      "date": "2023-05-01",
+      "date": "2023",
       "awarder": "Amherst College",
       "summary": ""
     },
     {
       "title": "The Grosfeld Family Scholarship",
-      "date": "2022-05-01",
+      "date": "2022",
       "awarder": "Amherst College",
       "summary": ""
     },
     {
       "title": "Twenties Outstanding Young Vietnamese Award",
-      "date": "2021-01-01",
+      "date": "2021",
       "awarder": "Government of Vietnam",
       "summary": ""
     },
     {
       "title": "Labor Order: Third Class",
-      "date": "2021-01-01",
+      "date": "2021",
       "awarder": "Government of Vietnam",
       "summary": ""
     },
     {
       "title": "Gold Medal, International Medicine Olympiad",
-      "date": "2021-01-01",
+      "date": "2021",
       "awarder": "International Medicine Olympiad",
       "summary": ""
     },
     {
       "title": "Youth with Impacts National Award",
-      "date": "2021-01-01",
+      "date": "2021",
       "awarder": "Vietnam Youth Federation",
       "summary": ""
     },
     {
       "title": "Top 50 Global, The Global Student Prize",
-      "date": "2020-01-01",
+      "date": "2020",
       "awarder": "Chegg.org & Varkey Foundation",
       "summary": ""
     },
     {
       "title": "Silver Medal, Rudolf Ortvay International Competition in Physics",
-      "date": "2020-01-01",
+      "date": "2020",
       "awarder": "Rudolf Ortvay Competition",
       "summary": ""
     },
     {
       "title": "Silver Medal, International Biology Olympiad",
-      "date": "2020-01-01",
+      "date": "2020",
       "awarder": "International Biology Olympiad",
       "summary": ""
     },
     {
       "title": "Best Poster Prize, International Biology Olympiad",
-      "date": "2020-01-01",
+      "date": "2020",
       "awarder": "International Biology Olympiad",
       "summary": ""
     },
     {
       "title": "Gold Medal, National Biology Olympiad",
-      "date": "2020-01-01",
+      "date": "2020",
       "awarder": "Ministry of Education and Training, Vietnam",
       "summary": ""
     },
     {
       "title": "Gold Medal, National Science Contest",
-      "date": "2020-01-01",
+      "date": "2020",
       "awarder": "Vietnam National University",
       "summary": ""
     },
     {
       "title": "Certificate of Merit",
-      "date": "2020-01-01",
+      "date": "2020",
       "awarder": "Minister of Education and Training, Vietnam",
       "summary": ""
     }
@@ -186,21 +186,21 @@
     {
       "name": "WelQrate: Defining the gold standard in small molecule drug discovery benchmarking",
       "publisher": "NeurIPS",
-      "releaseDate": "2024-11-01",
+      "releaseDate": "2024",
       "url": "https://doi.org/10.48550/arXiv.2411.09820",
       "summary": ""
     },
     {
       "name": "Advancements in ligand-based virtual screening through the synergistic integration of graph neural networks and expert-crafted descriptors",
       "publisher": "Journal of Chemical Information and Modeling",
-      "releaseDate": "2023-10-01",
+      "releaseDate": "2023",
       "url": "https://doi.org/10.1021/acs.jcim.5c00822",
       "summary": ""
     },
     {
       "name": "Sounds of Faith: A Story of Quranic Reciters in the Connecticut River Valley",
       "publisher": "Soundscapes of the Connecticut River Valley Archive",
-      "releaseDate": "2024-04-01",
+      "releaseDate": "2024",
       "url": "https://www.valleysoundscapes.org/sounds-of-faith-a-story-of-quranic-reciters-in-the-connecticut-river-valley-2024/",
       "summary": ""
     }
@@ -211,8 +211,8 @@
       "location": "Cambridge, MA, USA",
       "position": "House Counsel Member",
       "url": "",
-      "startDate": "2025-02-01",
-      "endDate": "present",
+      "startDate": "2025-02",
+      "endDate": "2025-05",
       "summary": "Organize events and community activities for 100+ students in the Dudley House community."
     },
     {
@@ -220,8 +220,8 @@
       "location": "Amherst, MA, USA",
       "position": "Co-President",
       "url": "",
-      "startDate": "2024-08-01",
-      "endDate": "present",
+      "startDate": "2024-08",
+      "endDate": "Co-present",
       "summary": "Launched journal clubs, 'Lunch with Professors' series, and computational biology workshops to engage students in life-science research."
     },
     {
@@ -229,7 +229,7 @@
       "location": "Amherst, MA, USA",
       "position": "Academic Coach",
       "url": "https://www.amherst.edu/academiclife/support/strategic-learning-center/about",
-      "startDate": "2023-09-01",
+      "startDate": "2023-09",
       "endDate": "present",
       "summary": "Provided peer-to-peer coaching on learning strategies, time management, and study motivation to 200+ students."
     },
@@ -238,7 +238,7 @@
       "location": "Amherst, MA, USA",
       "position": "Teaching Assistant & Peer Tutor",
       "url": "",
-      "startDate": "2023-01-01",
+      "startDate": "2023-01",
       "endDate": "present",
       "summary": "Assisted in labs, office hours, and grading; tutored 1-on-1 students across introductory to advanced STEM courses."
     }
