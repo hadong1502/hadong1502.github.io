@@ -335,32 +335,32 @@
       "name": "Does HMAX Subject to Müller-Lyer Illusion? @ Harvard Neuro240",
       "summary": "Trained an SVM on HMAX embeddings for length classification and evaluated its performance on an illusion dataset, observing human-like perceptual biases.",
       "highlights": [],
-      "startDate": "2025-01-01",
-      "endDate": "2025-12-31",
+      "startDate": "2025",
+      "endDate": "",
       "url": ""
     },
     {
       "name": "Forecasting Bioactivity: Building Predictive Models for Drug Discovery @ Alkermes Plc",
       "summary": "Collaborated on generating ensemble models for bioactivity endpoints targeting serotonin and dopamine receptors using ChEMBL data during my internship.",
       "highlights": [],
-      "startDate": "2024-01-01",
-      "endDate": "2024-12-31",
+      "startDate": "2024",
+      "endDate": "",
       "url": ""
     },
     {
       "name": "Biology Focus Group @ Amherst College Biology Department DEI Committee",
       "summary": "Led research and data analysis on access to learning for underrepresented students; conducted 10+ focus groups informing departmental pedagogical improvements.",
       "highlights": [],
-      "startDate": "2023-01-01",
-      "endDate": "2023-12-31",
+      "startDate": "2023",
+      "endDate": "",
       "url": ""
     },
     {
       "name": "Biology For All Vietnam",
       "summary": "Founded a non-profit that delivered free advanced biology courses to 23 high schools, resulting in 78 national and 3 international Olympiad medals.",
       "highlights": [],
-      "startDate": "2019-01-01",
-      "endDate": "2022-12-31",
+      "startDate": "2019",
+      "endDate": "2022",
       "url": ""
     }
   ]
