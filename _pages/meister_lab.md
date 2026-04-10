@@ -115,17 +115,38 @@ _styles: >
 
 <div class="flow-step">
   <h3>1) Closed-loop setup</h3>
-  {% include figure.liquid path="assets/img/projects/meister-lab/01-closed-loop-setup.png" alt="Closed-loop hunting setup figure from report" class="img-fluid rounded z-depth-1" caption="Figure from report: arena, tracking loop, and prey-escape logic." %}
+  {% assign setup_fig = site.static_files | where: "path", "/assets/img/projects/meister-lab/01-closed-loop-setup.png" | first %}
+  {% if setup_fig %}
+    {% include figure.liquid path="assets/img/projects/meister-lab/01-closed-loop-setup.png" alt="Closed-loop hunting setup figure from report" class="img-fluid rounded z-depth-1" caption="Figure from report: arena, tracking loop, and prey-escape logic." %}
+  {% else %}
+    <div class="brief-card">
+      Upload <code>assets/img/projects/meister-lab/01-closed-loop-setup.png</code> to display this figure.
+    </div>
+  {% endif %}
 </div>
 
 <div class="flow-step">
   <h3>2) Behavioral trajectories</h3>
-  {% include figure.liquid path="assets/img/projects/meister-lab/02-behavioral-trajectories.png" alt="Behavioral trajectories figure from report" class="img-fluid rounded z-depth-1" caption="Figure from report: representative trajectories and kinematic signatures across trials." %}
+  {% assign behavior_fig = site.static_files | where: "path", "/assets/img/projects/meister-lab/02-behavioral-trajectories.png" | first %}
+  {% if behavior_fig %}
+    {% include figure.liquid path="assets/img/projects/meister-lab/02-behavioral-trajectories.png" alt="Behavioral trajectories figure from report" class="img-fluid rounded z-depth-1" caption="Figure from report: representative trajectories and kinematic signatures across trials." %}
+  {% else %}
+    <div class="brief-card">
+      Upload <code>assets/img/projects/meister-lab/02-behavioral-trajectories.png</code> to display this figure.
+    </div>
+  {% endif %}
 </div>
 
 <div class="flow-step">
   <h3>3) State inference and neural correspondence</h3>
-  {% include figure.liquid path="assets/img/projects/meister-lab/03-glm-hmm-states.png" alt="GLM-HMM latent states and neural correspondence figure from report" class="img-fluid rounded z-depth-1" caption="Figure from report: inferred latent states and correspondence with superior colliculus activity." %}
+  {% assign state_fig = site.static_files | where: "path", "/assets/img/projects/meister-lab/03-glm-hmm-states.png" | first %}
+  {% if state_fig %}
+    {% include figure.liquid path="assets/img/projects/meister-lab/03-glm-hmm-states.png" alt="GLM-HMM latent states and neural correspondence figure from report" class="img-fluid rounded z-depth-1" caption="Figure from report: inferred latent states and correspondence with superior colliculus activity." %}
+  {% else %}
+    <div class="brief-card">
+      Upload <code>assets/img/projects/meister-lab/03-glm-hmm-states.png</code> to display this figure.
+    </div>
+  {% endif %}
 </div>
 
 <blockquote class="brief-note">
@@ -133,9 +154,23 @@ _styles: >
 </blockquote>
 
 <div class="report-links">
-  <a href="{{ '/assets/pdf/meister-lab/interim_report.pdf' | relative_url }}">Interim report (PDF)</a>
-  <a href="{{ '/assets/pdf/meister-lab/interim_report_2.pdf' | relative_url }}">Interim report 2 (PDF)</a>
-  <a href="{{ '/assets/pdf/meister-lab/final_project_paper.pdf' | relative_url }}">Final project paper (PDF)</a>
+  {% assign interim_report = site.static_files | where: "path", "/assets/pdf/meister-lab/interim_report.pdf" | first %}
+  {% assign interim_report_2 = site.static_files | where: "path", "/assets/pdf/meister-lab/interim_report_2.pdf" | first %}
+  {% assign final_report = site.static_files | where: "path", "/assets/pdf/meister-lab/final_project_paper.pdf" | first %}
+  {% if interim_report %}
+    <a href="{{ '/assets/pdf/meister-lab/interim_report.pdf' | relative_url }}">Interim report (PDF)</a>
+  {% endif %}
+  {% if interim_report_2 %}
+    <a href="{{ '/assets/pdf/meister-lab/interim_report_2.pdf' | relative_url }}">Interim report 2 (PDF)</a>
+  {% endif %}
+  {% if final_report %}
+    <a href="{{ '/assets/pdf/meister-lab/final_project_paper.pdf' | relative_url }}">Final project paper (PDF)</a>
+  {% endif %}
+  {% unless interim_report or interim_report_2 or final_report %}
+    <div class="brief-card">
+      Upload project PDFs to <code>assets/pdf/meister-lab/</code> and links will appear here automatically.
+    </div>
+  {% endunless %}
 </div>
 
 <p class="asset-guide">
