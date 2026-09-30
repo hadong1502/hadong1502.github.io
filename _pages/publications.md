@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Equal contributions are denoted by *
+description: "* Equal contribution. † Co-senior author."
 nav: true
 nav_order: 2
 ---
