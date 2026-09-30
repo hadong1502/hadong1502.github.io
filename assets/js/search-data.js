@@ -33,7 +33,7 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%68%64%6F%6E%67%32%36@%61%6D%68%65%72%73%74.%65%64%75", "_blank");
+          window.open("mailto:%68%61%64%6F%6E%67@%67.%68%61%72%76%61%72%64.%65%64%75", "_blank");
         },
       },{
         id: 'social-facebook',
@@ -48,6 +48,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://www.linkedin.com/in/ha-dong-ngoc", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0009-0000-2257-6543", "_blank");
         },
       },{
         id: 'social-scholar',
