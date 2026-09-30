@@ -1,3 +1,5 @@
+{% comment %} Footer / copyright bar hidden. Remove this comment wrapper and the endcomment at the bottom to restore. {% endcomment %}
+{% comment %}
 {% capture footer_contents %}
   &copy; Copyright {{ site.time | date: '%Y' }}
   {{ site.first_name }}
@@ -28,3 +30,4 @@
     </div>
   </footer>
 {% endif %}
+{% endcomment %}

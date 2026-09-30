@@ -2,16 +2,14 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p><a href="mailto:hadong@g.harvard.edu">hadong@g.harvard.edu</a></p>
+    <p>220 Longwood Ave, Boston, MA 02115</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,7 +25,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi there! I graduated from Amherst College, where I majored in Neuroscience, Mathematics, and Physics. I previously worked at the [Meiler Lab](https://meilerlab.org/) (Vanderbilt), the [Meister Lab](https://meisterlab.caltech.edu/) (Caltech), the [Murthy Lab](https://vnmurthylab.org/) (Harvard), and the [Trapani Lab](https://www.trapanilab.com/) (Amherst), in the domains of neuroscience and artificial intelligence. This fall, I'm starting as a Ph.D. student at Harvard University and Graduate Fellow at the Kempner Institute for the Study of Natural and Artificial Intelligence.
+Hi there! I graduated from Amherst College, where I majored in Neuroscience, Mathematics, and Physics. I previously worked at the [Meiler Lab](https://meilerlab.org/) (Vanderbilt), the [Meister Lab](https://meisterlab.caltech.edu/) (Caltech), the [Murthy Lab](https://vnmurthylab.org/) (Harvard), and the [Trapani Lab](https://www.trapanilab.com/) (Amherst), in the domains of neuroscience and artificial intelligence. This fall, I'm starting as a [Neuroscience Ph.D. student](https://neuroscience.hms.harvard.edu/) at [Harvard University](https://neuroscience.hms.harvard.edu/) and Graduate Fellow at the [Kempner Institute for the Study of Natural and Artificial Intelligence](https://kempnerinstitute.harvard.edu/).
 
 <!-- Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
