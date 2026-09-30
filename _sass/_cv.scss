@@ -218,3 +218,28 @@ ul.timeline li::before {
      color: var(--global-text-color);
 }
 */
+
+/*****************************
+ * CV bullet points: small solid squares
+ *****************************/
+
+.cv ul.items,
+.cv ul.subitems {
+  list-style: none;
+}
+
+.cv ul.items li,
+.cv ul.subitems li {
+  position: relative;
+}
+
+.cv ul.items li::before,
+.cv ul.subitems li::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 0.6em;
+  width: 0.4em;
+  height: 0.4em;
+  background-color: var(--global-text-color);
+}

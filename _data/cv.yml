@@ -8,13 +8,14 @@
   contents:
     - title: Ph.D. in Neuroscience, Kempner Graduate Fellow
       institution: Harvard University, Cambridge, MA
-      year: 2026 - 2032 (expected)
-    - title: B.A. in Mathematics, Physics, and Neuroscience, summa cum laude
+      year: 2026 - Present
+    - title: B.A. in Mathematics, Physics, and Neuroscience
       institution: Amherst College, Amherst, MA
       year: 2022 - 2026
       description:
+        - <i>summa cum laude</i>
         - "Honors Thesis: “Exploratory Analysis of Escape Behavior and Circuitry in Larval Zebrafish”"
-        - "Advisor: Josef G. Trapani, Ph.D."
+        - "<i>Advisor: Josef G. Trapani, Ph.D.</i>"
     - title: Visiting Undergraduate Students Program
       institution: Harvard College, Cambridge, MA
       year: 2025
@@ -27,34 +28,34 @@
     - title: Gregory S. Call Research Fellow
       institution: Amherst College, Department of Neuroscience, Amherst, MA
       year: 2025 - 2026
-      maindescription: "Advisor: Dr. Josef G. Trapani"
+      maindescription: "<i>Advisor: Dr. Josef G. Trapani</i>"
       description:
         - Developed a circuit model of the temporal dynamics of C-bends during larval zebrafish startle responses, integrating field potential, calcium imaging, and behavioral data for an honors thesis.
         - Supported electrophysiology and imaging experiments investigating the effects of low-dose cisplatin on hair-cell function and mitochondrial morphology.
     - title: Research Intern
       institution: Harvard University, Center for Brain Science, Cambridge, MA
       year: 2025
-      maindescription: "Advisors: Dr. Venkatesh Murthy, Dr. Jacob Zavatone-Veth"
+      maindescription: "<i>Advisors: Dr. Venkatesh Murthy, Dr. Jacob Zavatone-Veth</i>"
       description:
         - Developed an inverse inference algorithm to extract latent finite-state controller policies and memories from behavioral data.
         - Designed a behavioral paradigm and collected data to investigate how conflicting auditory and olfactory signals influence trail-following behavior.
     - title: Undergraduate Researcher
       institution: Vanderbilt University, Department of Chemistry, Nashville, TN
       year: 2023 - 2025
-      maindescription: "Advisors: Dr. Jens Meiler, Dr. Yunchao Liu"
+      maindescription: "<i>Advisors: Dr. Jens Meiler, Dr. Yunchao Liu</i>"
       description:
         - Developed WelQrate, an open-source benchmark comprising nine high-throughput screening datasets, a standardized chemical-curation pipeline, and benchmarking frameworks for probabilistic, sequence-based, and graph-based machine-learning models.
         - Developed and evaluated a graph-learning augmentation method integrating expert-crafted molecular descriptors into graph representations, improving predictive performance across multiple graph neural-network architectures.
     - title: R&D Intern
       institution: Alkermes plc, Waltham, MA
       year: 2024
-      maindescription: "Advisors: Dr. Joerg Bentzien, Dr. Polina Vanyukov, Dr. Shinichiro Wachi"
+      maindescription: "<i>Advisors: Dr. Joerg Bentzien, Dr. Polina Vanyukov, Dr. Shinichiro Wachi</i>"
       description:
         - Developed an end-to-end machine-learning pipeline using ChEMBL data and random-forest models to predict multiple bioactivity endpoints for serotonin (5-HT) and dopamine receptors.
     - title: Summer Undergraduate Research Fellow
       institution: California Institute of Technology, Pasadena, CA
       year: 2024
-      maindescription: "Advisor: Dr. Markus Meister"
+      maindescription: "<i>Advisor: Dr. Markus Meister</i>"
       description:
         - Helped design and engineer a closed-loop behavioral system in which artificial prey evaded hunting mice using naturalistic escape strategies.
         - Collected Neuropixels and keypoint-tracking data and applied hidden Markov models to characterize internal states underlying hunting behavior and their relationship to superior colliculus activity.
@@ -97,29 +98,25 @@
         - Obed Finch Slingerland Memorial Prize, Amherst College Board of Trustees
     - year: 2025
       items:
-        - Charles Hamilton Houston Research Grant ($5,000), Amherst College
+        - Charles Hamilton Houston Research Grant (<i>$5,000</i>), Amherst College
     - year: 2024 - 2025
       items:
         - Break Through Tech AI Fellowship, MIT Schwarzman College of Computing
     - year: 2024
       items:
         - Scholar Travel Award, NeurIPS
-        - Gregory S. Call Travel Award ($1,000), Amherst College
-        - Meiklejohn Summer Research Grant ($5,000), Amherst College
+        - Gregory S. Call Travel Award (<i>$1,000</i>), Amherst College
+        - Meiklejohn Summer Research Grant (<i>$5,000</i>), Amherst College
     - year: 2023
       items:
-        - Meiklejohn Summer Research Grant ($5,000), Amherst College
+        - Meiklejohn Summer Research Grant (<i>$5,000</i>), Amherst College
     - year: 2022
       items:
         - The Grosfeld Family Scholarship, Amherst College
-
-- title: Pre-college Honors
-  type: time_table
-  contents:
     - year: 2021
       items:
-        - Top 20 Outstanding Young Vietnamese Faces Award (national youth honor), Government of Vietnam
-        - Labor Order, Third Class (national civilian order of merit), Government of Vietnam
+        - Top 20 Outstanding Young Vietnamese Faces Award (<i>national youth honor</i>), Government of Vietnam
+        - Labor Order, Third Class (<i>national civilian order of merit</i>), Government of Vietnam
         - Gold Medal, International Medicine and Disease Olympiad, IMDO Foundation Board
         - Exemplary Young Citizen Award, Vietnam Youth Federation
     - year: 2020
@@ -139,57 +136,68 @@
 - title: Teaching
   type: time_table
   contents:
-    - title: Instructor
+    - title: Teaching Assistant
+      institution: Amherst College, Amherst, MA
+      year: 2023 - 2026
+      description:
+        - "Animal Physiology, Spring 2026 (<i>Instructor: Dr. Josef Trapani</i>)"
+        - "Electromagnetism and Optics, Fall 2023 (<i>Instructors: Dr. Juan Vasquez Carmona, Dr. Jarrett Moyer</i>)"
+        - "Molecules, Genes & Cells, Spring 2023 (<i>Instructors: Dr. Alexandra Purdy, Dr. Katerina Ragkousi, Dr. Christina Bowers</i>)"
+    - title: Grader
+      institution: Amherst College, Amherst, MA
+      year: 2024 - 2026
+      description:
+        - "Graph Theory, Spring 2026 (<i>Instructor: Dr. Miriam Kuzbary</i>)"
+        - "Linear Algebra, Fall 2025 (<i>Instructor: Dr. Joseph Palmer</i>)"
+        - "Introduction to Analysis, Fall 2024 (<i>Instructor: Dr. Ryan Alvarado</i>)"
+    - title: Biology Teacher
+      institution: High School for Gifted Students, Vietnam National University
       year: 2019 - 2022
-      institution: Biology Teacher, High School for Gifted Students, Vietnam National University
       description:
         - "Subjects: Molecular and Cellular Biology, Plant and Animal Physiology, Genetics, Evolutionary Biology, Ecology"
         - "Notable outcomes: 1 International Biology Olympiad gold medal, 14 National Olympiad medals"
-    - title: Teaching Assistant
-      year: Spring 2026
-      institution: Animal Physiology, Amherst College
-      maindescription: "Instructor: Dr. Josef Trapani"
-    - title: Teaching Assistant
-      year: Fall 2023
-      institution: Electromagnetism and Optics, Amherst College
-      maindescription: "Instructors: Dr. Juan Vasquez Carmona, Dr. Jarrett Moyer"
-    - title: Teaching Assistant
-      year: Spring 2023
-      institution: Molecules, Genes & Cells, Amherst College
-      maindescription: "Instructors: Dr. Alexandra Purdy, Dr. Katerina Ragkousi, Dr. Christina Bowers"
-    - title: Grader
-      year: Spring 2026
-      institution: Graph Theory, Amherst College
-      maindescription: "Instructor: Dr. Miriam Kuzbary"
-    - title: Grader
-      year: Fall 2025
-      institution: Linear Algebra, Amherst College
-      maindescription: "Instructor: Dr. Joseph Palmer"
-    - title: Grader
-      year: Fall 2024
-      institution: Introduction to Analysis, Amherst College
-      maindescription: "Instructor: Dr. Ryan Alvarado"
 
 - title: Service
   type: time_table
   contents:
+    - title: Vice President
+      institution: International Student Association, Amherst College
+      year: 2026
+    - title: Organizer, Syllabus Design Workshops for Faculty
+      institution: Amherst College
+      year: 2025
+    - title: Founder & President
+      institution: Biotechnology Club, Amherst College
+      year: 2024 - 2026
+    - title: Pedagogical Fellow
+      institution: Center for Teaching and Learning, Amherst College
+      year: 2023 - 2025
+    - title: Academic Coach
+      institution: Strategic Learning Center, Amherst College
+      year: 2023 - 2025
+    - title: Diversity, Equity, and Inclusion Fellow
+      institution: Biology Steering Committee, Amherst College
+      year: 2023
+    - title: Panelist
+      institution: STEM Research Invitational, Amherst College
+      year: 2023
+    - title: Student Panelist
+      institution: Provost's Annual Retreat on Teaching and Learning, Amherst College
+      year: 2023
     - title: Manuscript Peer Review
-      description:
-        - Journal of Computational Biophysics and Chemistry
-    - title: Service to the Department and University
-      description:
-        - "2026: Vice President, International Student Association, Amherst College"
-        - "2024–2026: Founder & President, Biotechnology Club, Amherst College"
-        - "2025: Organizer, Syllabus Design Workshops for Faculty, Amherst College"
-        - "2023–2025: Pedagogical Fellow, Center for Teaching and Learning, Amherst College"
-        - "2023–2025: Academic Coach, Strategic Learning Center, Amherst College"
-        - "2023: Diversity, Equity, and Inclusion Fellow, Biology Steering Committee, Amherst College"
-        - "2023: Panelist, STEM Research Invitational, Amherst College"
-        - "2023: Student Panelist, Provost's Annual Retreat on Teaching and Learning, Amherst College"
-    - title: Service to the Broader Community
-      description:
-        - "2018–present: Member of Board, Talent Nurturing Program (“Chuong trinh Nuoi Duong Nhan Tai”)"
-        - "2019–2022: Founder & President, Biology For All Vietnam Project"
-        - "2021–2022: Project Lead & English Teacher, Passerelles Numériques Vietnam"
-        - "2021: Organizer, International Conference on Raising Cybersecurity Awareness among Teenagers, Royal Thai Consulate-General"
-        - "2020–2021: Admissions Committee & Mentor in Biology, Vietnam Math and Science Summer Program"
+      institution: Journal of Computational Biophysics and Chemistry
+    - title: Member of Board
+      institution: Talent Nurturing Program (“Chuong trinh Nuoi Duong Nhan Tai”)
+      year: 2018 - Present
+    - title: Founder & President
+      institution: Biology For All Vietnam Project
+      year: 2019 - 2022
+    - title: Project Lead & English Teacher
+      institution: Passerelles Numériques Vietnam
+      year: 2021 - 2022
+    - title: Organizer
+      institution: International Conference on Raising Cybersecurity Awareness among Teenagers, Royal Thai Consulate-General
+      year: 2021
+    - title: Admissions Committee & Mentor in Biology
+      institution: Vietnam Math and Science Summer Program
+      year: 2020 - 2021
