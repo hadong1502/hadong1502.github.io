@@ -1,97 +1,195 @@
-- title: General Information
-  type: map
+- title: Research Interests
+  type: list
   contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+    - Circuit- and algorithm-level accounts of how nervous systems produce fast, robust behavior, and how those principles inform the design of learning systems.
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D. in Neuroscience, Kempner Graduate Fellow
+      institution: Harvard University, Cambridge, MA
+      year: 2026 - 2032 (expected)
+    - title: B.A. in Mathematics, Physics, and Neuroscience, summa cum laude
+      institution: Amherst College, Amherst, MA
+      year: 2022 - 2026
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - "Honors Thesis: “Exploratory Analysis of Escape Behavior and Circuitry in Larval Zebrafish”"
+        - "Advisor: Josef G. Trapani, Ph.D."
+    - title: Visiting Undergraduate Students Program
+      institution: Harvard College, Cambridge, MA
+      year: 2025
       description:
-        - Description 1.
-        - Description 2.
+        - "Coursework: Modern Neuroanatomy, Biological and Artificial Intelligence, Electron Microscopy, Graph Theory"
 
-- title: Experience
+- title: Research Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Gregory S. Call Research Fellow
+      institution: Amherst College, Department of Neuroscience, Amherst, MA
+      year: 2025 - 2026
+      maindescription: "Advisor: Dr. Josef G. Trapani"
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Developed a circuit model of the temporal dynamics of C-bends during larval zebrafish startle responses, integrating field potential, calcium imaging, and behavioral data for an honors thesis.
+        - Supported electrophysiology and imaging experiments investigating the effects of low-dose cisplatin on hair-cell function and mitochondrial morphology.
+    - title: Research Intern
+      institution: Harvard University, Center for Brain Science, Cambridge, MA
+      year: 2025
+      maindescription: "Advisors: Dr. Venkatesh Murthy, Dr. Jacob Zavatone-Veth"
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - Developed an inverse inference algorithm to extract latent finite-state controller policies and memories from behavioral data.
+        - Designed a behavioral paradigm and collected data to investigate how conflicting auditory and olfactory signals influence trail-following behavior.
+    - title: Undergraduate Researcher
+      institution: Vanderbilt University, Department of Chemistry, Nashville, TN
+      year: 2023 - 2025
+      maindescription: "Advisors: Dr. Jens Meiler, Dr. Yunchao Liu"
       description:
+        - Developed WelQrate, an open-source benchmark comprising nine high-throughput screening datasets, a standardized chemical-curation pipeline, and benchmarking frameworks for probabilistic, sequence-based, and graph-based machine-learning models.
+        - Developed and evaluated a graph-learning augmentation method integrating expert-crafted molecular descriptors into graph representations, improving predictive performance across multiple graph neural-network architectures.
+    - title: R&D Intern
+      institution: Alkermes plc, Waltham, MA
+      year: 2024
+      maindescription: "Advisors: Dr. Joerg Bentzien, Dr. Polina Vanyukov, Dr. Shinichiro Wachi"
+      description:
+        - Developed an end-to-end machine-learning pipeline using ChEMBL data and random-forest models to predict multiple bioactivity endpoints for serotonin (5-HT) and dopamine receptors.
+    - title: Summer Undergraduate Research Fellow
+      institution: California Institute of Technology, Pasadena, CA
+      year: 2024
+      maindescription: "Advisor: Dr. Markus Meister"
+      description:
+        - Helped design and engineer a closed-loop behavioral system in which artificial prey evaded hunting mice using naturalistic escape strategies.
+        - Collected Neuropixels and keypoint-tracking data and applied hidden Markov models to characterize internal states underlying hunting behavior and their relationship to superior colliculus activity.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Publications
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Journal Articles
+      description:
+        - 'Liu, Y., Moretti, R., Wang, Y., <b>Dong, H.</b>, Yan, B., Bodenheimer, B., Derr, T.<sup>‡</sup>, &amp; Meiler, J.<sup>‡</sup> (2025). Advancements in ligand-based virtual screening through the synergistic integration of graph neural networks and expert-crafted descriptors. <i>Journal of Chemical Information and Modeling</i>, 65(10), 4898–4905. <a href="https://doi.org/10.1021/acs.jcim.5c00822">[DOI]</a> <a href="https://pubs.acs.org/jcisd8/article-pdf/65/10/4898/41158167/ci5c00822.pdf">[PDF]</a>'
+    - title: Refereed Conference Proceedings
+      description:
+        - 'Liu, Y.<sup>†</sup>, <b>Dong, H.</b><sup>†</sup>, Wang, X., Moretti, R., Wang, Y., Su, Z., Gu, J., Bodenheimer, B., Weaver, C. D., Meiler, J.<sup>‡</sup>, &amp; Derr, T.<sup>‡</sup> (2024). WelQrate: Defining the gold standard in small molecule drug discovery benchmarking. <i>Advances in Neural Information Processing Systems</i>, 37, 53222–53236. <a href="https://doi.org/10.52202/079017-1686">[DOI]</a> <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/5f2f8305cd1c5be7e8319aea306388ce-Paper-Datasets_and_Benchmarks_Track.pdf">[PDF]</a> <a href="https://www.welqrate.org/">[Website]</a>'
+    - title: "<sup>†</sup>Equal contribution. <sup>‡</sup>Co-senior author."
 
-- title: Honors and Awards
+- title: Presentations
   type: time_table
   contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+    - title: Posters
+      description:
+        - 'Pollak, D., Wang, J., <b>Dong, H.</b>, Rios, A., Li, X. H., Zhong, E., &amp; Meister, M. (2026, August). A parametric guidance law model of hunting in mice. Poster presented at the <i>9th Annual Conference on Cognitive Computational Neuroscience (CCN)</i>, New York, NY. <a href="https://openreview.net/forum?id=oixbvK90ur">[Abstract]</a>'
+    - title: Talks
+      description:
+        - '<b>Dong, H.</b>, Meister, M., &amp; Pollak, D. (2024). The states of hunting. Talk presented at the <i>California Institute of Technology Summer Research Seminar</i>, Pasadena, CA.'
+        - '<b>Dong, H.</b>, Meiler, J., &amp; Liu, Y. (2024). Advances in drug discovery. Talk presented at the <i>AI in the Liberal Arts Undergraduate Conference</i>, Amherst, MA.'
+        - '<b>Dong, H.</b>, Meiler, J., &amp; Liu, Y. (2023). Deep graph learning benchmark for ligand-based drug discovery. Talk presented at the <i>Amherst College Summer Research Seminar</i>, Amherst, MA.'
 
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+- title: Creative Works
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - '<b>Dong, H.</b>, &amp; Engelhardt, J. (2024). Sounds of Faith: A story of Quranic reciters in the Connecticut River Valley. <i>Soundscapes of the Connecticut River Valley online archive</i>. <a href="https://www.valleysoundscapes.org/sounds-of-faith-a-story-of-quranic-reciters-in-the-connecticut-river-valley-2024/">[Documentary film]</a>'
+
+- title: Awards, Honors & Grants
+  type: time_table
+  contents:
+    - year: 2026
+      items:
+        - Kempner Graduate Fellowship, Harvard University
+        - Ryan EDGE Fellowship, Harvard Medical School
+        - Obed Finch Slingerland Memorial Prize, Amherst College Board of Trustees
+    - year: 2025
+      items:
+        - Charles Hamilton Houston Research Grant ($5,000), Amherst College
+    - year: 2024 - 2025
+      items:
+        - Break Through Tech AI Fellowship, MIT Schwarzman College of Computing
+    - year: 2024
+      items:
+        - Scholar Travel Award, NeurIPS
+        - Gregory S. Call Travel Award ($1,000), Amherst College
+        - Meiklejohn Summer Research Grant ($5,000), Amherst College
+    - year: 2023
+      items:
+        - Meiklejohn Summer Research Grant ($5,000), Amherst College
+    - year: 2022
+      items:
+        - The Grosfeld Family Scholarship, Amherst College
+
+- title: Pre-college Honors
+  type: time_table
+  contents:
+    - year: 2021
+      items:
+        - Top 20 Outstanding Young Vietnamese Faces Award (national youth honor), Government of Vietnam
+        - Labor Order, Third Class (national civilian order of merit), Government of Vietnam
+        - Gold Medal, International Medicine and Disease Olympiad, IMDO Foundation Board
+        - Exemplary Young Citizen Award, Vietnam Youth Federation
+    - year: 2020
+      items:
+        - Top 50 Global Finalist, Global Student Prize, Chegg.org & Varkey Foundation
+        - Silver Medal, Rudolf Ortvay International Competition in Physics for Undergraduates, Hungarian Association of Physics Students
+        - Silver Medal, International Biology Olympiad, IBO Committee
+
+- title: Professional Development
+  type: time_table
+  contents:
+    - year: 2022 - 2026
+      items:
+        - Education Profession Fellowship, Loeb Career Center, Amherst College
+        - Meiklejohn Fellowship, Loeb Career Center, Amherst College
+
+- title: Teaching
+  type: time_table
+  contents:
+    - title: Instructor
+      year: 2019 - 2022
+      institution: Biology Teacher, High School for Gifted Students, Vietnam National University
+      description:
+        - "Subjects: Molecular and Cellular Biology, Plant and Animal Physiology, Genetics, Evolutionary Biology, Ecology"
+        - "Notable outcomes: 1 International Biology Olympiad gold medal, 14 National Olympiad medals"
+    - title: Teaching Assistant
+      year: Spring 2026
+      institution: Animal Physiology, Amherst College
+      maindescription: "Instructor: Dr. Josef Trapani"
+    - title: Teaching Assistant
+      year: Fall 2023
+      institution: Electromagnetism and Optics, Amherst College
+      maindescription: "Instructors: Dr. Juan Vasquez Carmona, Dr. Jarrett Moyer"
+    - title: Teaching Assistant
+      year: Spring 2023
+      institution: Molecules, Genes & Cells, Amherst College
+      maindescription: "Instructors: Dr. Alexandra Purdy, Dr. Katerina Ragkousi, Dr. Christina Bowers"
+    - title: Grader
+      year: Spring 2026
+      institution: Graph Theory, Amherst College
+      maindescription: "Instructor: Dr. Miriam Kuzbary"
+    - title: Grader
+      year: Fall 2025
+      institution: Linear Algebra, Amherst College
+      maindescription: "Instructor: Dr. Joseph Palmer"
+    - title: Grader
+      year: Fall 2024
+      institution: Introduction to Analysis, Amherst College
+      maindescription: "Instructor: Dr. Ryan Alvarado"
+
+- title: Service
+  type: time_table
+  contents:
+    - title: Manuscript Peer Review
+      description:
+        - Journal of Computational Biophysics and Chemistry
+    - title: Service to the Department and University
+      description:
+        - "2026: Vice President, International Student Association, Amherst College"
+        - "2024–2026: Founder & President, Biotechnology Club, Amherst College"
+        - "2025: Organizer, Syllabus Design Workshops for Faculty, Amherst College"
+        - "2023–2025: Pedagogical Fellow, Center for Teaching and Learning, Amherst College"
+        - "2023–2025: Academic Coach, Strategic Learning Center, Amherst College"
+        - "2023: Diversity, Equity, and Inclusion Fellow, Biology Steering Committee, Amherst College"
+        - "2023: Panelist, STEM Research Invitational, Amherst College"
+        - "2023: Student Panelist, Provost's Annual Retreat on Teaching and Learning, Amherst College"
+    - title: Service to the Broader Community
+      description:
+        - "2018–present: Member of Board, Talent Nurturing Program (“Chuong trinh Nuoi Duong Nhan Tai”)"
+        - "2019–2022: Founder & President, Biology For All Vietnam Project"
+        - "2021–2022: Project Lead & English Teacher, Passerelles Numériques Vietnam"
+        - "2021: Organizer, International Conference on Raising Cybersecurity Awareness among Teenagers, Royal Thai Consulate-General"
+        - "2020–2021: Admissions Committee & Mentor in Biology, Vietnam Math and Science Summer Program"
