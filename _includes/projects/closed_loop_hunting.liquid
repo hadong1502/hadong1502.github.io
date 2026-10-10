@@ -1,0 +1,227 @@
+<!-- Closed-loop hunting demo: ASCII mouse (cursor-driven) chases a chocolate chip that escapes along von Mises mixture angles. Self-contained; all ids/classes prefixed "clh". -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap">
+<style>
+.clh{--fg:var(--global-text-color);--soft:var(--global-text-color-light);--line:var(--global-divider-color);--muted:#a3a19a;--panel:rgba(0,0,0,.035);--chip:#9a5a1c;--ok:#3b6d11;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;display:flex;flex-direction:column;gap:20px;margin-bottom:2rem;color:var(--fg)}
+html[data-theme="dark"] .clh{--muted:#6c6a62;--panel:rgba(255,255,255,.06);--chip:#e0a35c;--ok:#97c459}
+.clh .clh-head{display:flex;flex-direction:column;gap:6px}
+.clh .clh-head h2{margin:0;font-weight:500;text-wrap:balance}
+.clh .clh-head h2 span{color:var(--soft);font-weight:400}
+.clh .clh-head p{margin:0}
+.clh .clh-wrap{width:100%;text-align:center;overflow:hidden}
+.clh pre.clh-scr{font-family:var(--mono);font-weight:700;line-height:1.15;margin:0;padding:0;border:0;border-radius:0;background:transparent;overflow:visible;cursor:crosshair;touch-action:none;user-select:none;color:var(--fg);display:inline-block;white-space:pre;text-align:left}
+.clh .clh-k1{color:var(--muted);font-weight:400}.clh .clh-k2{color:var(--chip)}.clh .clh-k4{color:var(--soft)}.clh .clh-k5{color:var(--ok)}
+.clh .clh-lower{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.clh .clh-fig{margin:0;flex:none;display:flex;flex-direction:column;align-items:center;gap:6px}
+.clh .clh-fig figcaption{font-size:13px;font-weight:500;color:var(--fg);height:28px;display:flex;align-items:center;margin:0;padding:0}
+.clh canvas.clh-pol{width:180px;height:180px;flex:none}
+.clh .clh-ctl{flex:1;min-width:240px;display:flex;flex-direction:column;gap:10px}
+.clh .clh-chead{display:flex;flex-wrap:wrap;align-items:center;gap:10px;min-height:28px;font-size:13px;font-weight:500;color:var(--fg)}
+.clh .clh-chead span{flex:1}
+.clh .clh-r{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--soft);margin:0}
+.clh .clh-r label{min-width:150px;margin:0}
+.clh output{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--fg);text-align:right}
+.clh .clh-r output{min-width:38px}
+.clh input[type=range]{-webkit-appearance:auto;appearance:auto;flex:1;min-width:0;margin:0;padding:0;border:0;background:transparent;accent-color:var(--chip)}
+.clh input[type=checkbox]{position:static!important;opacity:1!important;pointer-events:auto!important;visibility:visible!important;margin:0;accent-color:var(--chip)}
+.clh .clh-stats{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:var(--soft);padding-top:6px;border-top:1px solid var(--line)}
+.clh .clh-stats b{font-weight:500;color:var(--fg);font-family:var(--mono);font-variant-numeric:tabular-nums}
+.clh .clh-stats label{display:flex;align-items:center;gap:6px;margin:0}
+.clh select,.clh button{font:inherit;font-size:12px;font-weight:400;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:3px 10px;cursor:pointer;box-shadow:none;height:auto}
+.clh button:hover,.clh select:hover{border-color:var(--soft)}
+.clh select option{color:initial}
+.clh .clh-comps{display:flex;flex-direction:column;gap:6px}
+.clh .clh-comp{display:grid;grid-template-columns:18px repeat(3,minmax(0,1fr)) 24px;gap:10px;align-items:center;font-size:12px;color:var(--soft)}
+.clh .clh-comp .clh-n{font-family:var(--mono);color:var(--chip)}
+.clh .clh-comp label{display:flex;align-items:center;gap:6px;min-width:0;margin:0}
+.clh .clh-comp output{min-width:34px}
+.clh .clh-comp button{padding:0;width:24px;height:22px;line-height:1}
+.clh [hidden]{display:none!important}
+@media (max-width:560px){.clh .clh-comp{grid-template-columns:18px minmax(0,1fr) 24px}.clh .clh-comp label{grid-column:2}.clh .clh-comp button{grid-column:3;grid-row:1}}
+.clh input:focus-visible,.clh button:focus-visible,.clh select:focus-visible{outline:2px solid var(--chip);outline-offset:2px}
+</style>
+<div class="clh" id="clh-root">
+  <div class="clh-head">
+    <h2>Closed-loop hunting paradigm <span>(2024)</span></h2>
+    <p>How do you study naturalistic hunting behavior in a laboratory setting? At the Meister Lab (Caltech), I contributed to a closed-loop system that let a NeuroPixels-implanted mouse pursue a “robotic prey,” a chocolate chip that evaded the mouse with probabilistic strategies borrowed from escapology research (<a href="https://doi.org/10.1016/j.cub.2008.09.062" target="_blank" rel="noopener" title="Domenici, Booth, Blagburn and Bacon (2008). Cockroaches keep predators guessing by using preferred escape trajectories. Current Biology 18(22), 1792–1796.">Domenici et al., 2008</a>). This system allowed us to ask questions of how mouse perform task-switching and execute diverse strategies in response to dynamic external and internal states.</p>
+  </div>
+  <div class="clh-wrap" id="clh-wrap"><pre class="clh-scr" id="clh-scr" aria-label="ASCII arena: a mouse chases an escaping chocolate chip"></pre></div>
+  <div class="clh-lower">
+    <figure class="clh-fig">
+      <figcaption>Prey's escape modes</figcaption>
+      <canvas class="clh-pol" id="clh-pol" width="180" height="180" aria-label="Polar plot of the escape-angle distribution with recent samples"></canvas>
+    </figure>
+    <div class="clh-ctl">
+      <div class="clh-chead"><span>Mixture components</span>
+        <select id="clh-preset" aria-label="Preset mixture">
+          <option value="1">1 mode, straight away</option>
+          <option value="3">3 modes</option>
+          <option value="5" selected>5 modes</option>
+          <option value="7">7 modes, wide fan</option>
+        </select>
+        <button id="clh-add" type="button">Add component</button></div>
+      <div class="clh-comps" id="clh-comps"></div>
+      <div class="clh-r"><label for="clh-spd">Prey speed</label><input id="clh-spd" type="range" min="80" max="200" step="5" value="80"><output id="clh-spdo">80</output></div>
+      <div class="clh-r"><label for="clh-sense">Sensing radius</label><input id="clh-sense" type="range" min="8" max="60" step="1" value="24"><output id="clh-senseo">24</output></div>
+      <div class="clh-stats">
+        <label><input id="clh-showR" type="checkbox" checked>Show sensing radius</label>
+        <span>Caught <b id="clh-caught">0</b></span>
+        <span>Pursuit time <b id="clh-streak">0.0s</b></span>
+        <span>Best <b id="clh-best">0.0s</b></span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+{% raw %}
+(function(){
+const COLS=104,ROWS=30,S=1.25,TAU=Math.PI*2;
+const root=document.getElementById('clh-root');
+const $=id=>document.getElementById('clh-'+id);
+const scr=$('scr'),wrap=$('wrap'),pol=$('pol'),pc=pol.getContext('2d');
+let A=2,X0=1,X1=COLS-1,Y0=2,Y1=58;
+const ch=new Array(COLS*ROWS),cl=new Array(COLS*ROWS);
+const M={x:18,y:30,vx:0,vy:0,h:0},C={x:78,y:30,vx:0,vy:0,hd:0,bout:0};
+let P=null,tail=[],caught=0,streak=0,best=0,flash=0,senseR=24,samples=[];
+const spd=$('spd'),showR=$('showR');
+// mixture components: mean (deg, relative to "away"), raw weight, concentration
+const PRESETS={
+  '1':[[0,1,4]],
+  '3':[[0,.3,6],[70,.35,6],[-70,.35,6]],
+  '5':[[0,.25,30],[30,.22,30],[-30,.22,30],[65,.15,30],[-65,.16,30]],
+  '7':[[0,.16,10],[40,.16,10],[-40,.16,10],[85,.15,10],[-85,.15,10],[135,.11,12],[-135,.11,12]]};
+let comps=[];
+function setPreset(p){comps=PRESETS[p].map(([mu,w,k])=>({mu,w,k}));buildComps()}
+function wsum(){return comps.reduce((s,c)=>s+c.w,0)||1}
+function refreshW(){const t=wsum();comps.forEach((c,i)=>{const o=$('c'+i+'wo');if(o)o.textContent=Math.round(c.w/t*100)+'%'})}
+function buildComps(){const box=$('comps');box.innerHTML='';
+  comps.forEach((c,i)=>{const r=document.createElement('div');r.className='clh-comp';
+    r.innerHTML=`<span class="clh-n">${i+1}</span>`+
+      `<label>μ<input id="clh-c${i}mu" type="range" min="-180" max="180" step="5" value="${c.mu}" aria-label="Component ${i+1} mean angle"><output id="clh-c${i}muo">${c.mu}°</output></label>`+
+      `<label>w<input id="clh-c${i}w" type="range" min="0" max="1" step="0.01" value="${c.w}" aria-label="Component ${i+1} weight"><output id="clh-c${i}wo"></output></label>`+
+      `<label>κ<input id="clh-c${i}k" type="range" min="0.5" max="30" step="0.5" value="${c.k}" aria-label="Component ${i+1} concentration"><output id="clh-c${i}ko">${(+c.k).toFixed(1)}</output></label>`+
+      `<button type="button" aria-label="Remove component ${i+1}">×</button>`;
+    box.appendChild(r);
+    $('c'+i+'mu').oninput=e=>{c.mu=+e.target.value;$('c'+i+'muo').textContent=c.mu+'°'};
+    $('c'+i+'w').oninput=e=>{c.w=+e.target.value;refreshW()};
+    $('c'+i+'k').oninput=e=>{c.k=+e.target.value;$('c'+i+'ko').textContent=c.k.toFixed(1)};
+    const b=r.querySelector('button');b.hidden=comps.length<2;b.onclick=()=>{comps.splice(i,1);buildComps()}});
+  refreshW()}
+$('preset').onchange=e=>setPreset(e.target.value);
+$('add').onclick=()=>{comps.push({mu:Math.round((Math.random()*360-180)/5)*5,w:.15,k:8});buildComps()};
+setPreset('5');
+spd.oninput=()=>$('spdo').textContent=spd.value;
+$('sense').oninput=e=>{senseR=+e.target.value;$('senseo').textContent=senseR};
+
+function dpr(){const r=window.devicePixelRatio||1;pol.width=180*r;pol.height=180*r;pc.setTransform(r,0,0,r,0,0)}
+function fit(){const fs=Math.min(13,wrap.clientWidth/(COLS*0.61));scr.style.fontSize=fs.toFixed(2)+'px';const r=scr.getBoundingClientRect();if(r.width>0)A=(r.height/ROWS)/(r.width/COLS);Y0=A;Y1=(ROWS-1)*A}
+
+// Escape-angle model: mixture of von Mises, angles relative to "away from mouse"
+function modes(){const t=wsum();return comps.map(c=>({mu:c.mu*Math.PI/180,w:c.w/t,k:c.k}))}
+function vm(mu,k){ // Best & Fisher (1979)
+  if(k<1e-6)return mu+(Math.random()*2-1)*Math.PI;
+  const a=1+Math.sqrt(1+4*k*k),b=(a-Math.sqrt(2*a))/(2*k),r=(1+b*b)/(2*b);
+  for(;;){const z=Math.cos(Math.PI*Math.random()),f=(1+r*z)/(r+z),c=k*(r-f),u2=Math.random();
+    if(c*(2-c)-u2>0||Math.log(c/u2)+1-c>=0)return mu+(Math.random()<.5?-1:1)*Math.acos(f)}}
+function sampleRel(){const ms=modes();if(!comps.some(c=>c.w>0))return(Math.random()*2-1)*Math.PI;
+  let u=Math.random(),m=ms[ms.length-1];for(const q of ms){if(u<q.w){m=q;break}u-=q.w}return vm(m.mu,m.k)}
+function I0(x){let s=1,t=1;for(let k=1;k<60;k++){t*=(x/2/k)**2;s+=t}return s}
+function vmpdf(th,mu,k){return Math.exp(k*Math.cos(th-mu))/(TAU*I0(k))}
+function pdf(th){return modes().reduce((s,q)=>s+q.w*vmpdf(th,q.mu,q.k),0)}
+
+function put(wx,wy,c,k){const col=Math.floor(wx),row=Math.floor(wy/A);if(col<1||col>COLS-2||row<1||row>ROWS-2)return;const i=row*COLS+col;ch[i]=c;cl[i]=k}
+function lineChar(a){let d=((a*180/Math.PI)%180+180)%180;return d<22.5||d>=157.5?'-':d<67.5?'\\':d<112.5?'|':'/'}
+function nose(){return{x:M.x+Math.cos(M.h)*5.6*S,y:M.y+Math.sin(M.h)*5.6*S}}
+function clear(){
+  for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){const i=r*COLS+c;let g=' ',k=0;
+    if(r===0||r===ROWS-1){g=(c===0||c===COLS-1)?'+':'-';k=4}else if(c===0||c===COLS-1){g='|';k=4}else if(c%6===3&&r%3===1){g='.';k=1}
+    ch[i]=g;cl[i]=k}
+  const t=' closed-loop arena ';for(let j=0;j<t.length;j++){ch[3+j]=t[j];cl[3+j]=4}}
+function drawChip(){const R=2.7;for(let r=Math.floor((C.y-R)/A);r<=Math.ceil((C.y+R)/A);r++)for(let c=Math.floor(C.x-R);c<=Math.ceil(C.x+R);c++){const dx=c+.5-C.x,dy=(r+.5)*A-C.y,q=(dx*dx+dy*dy)/(R*R);if(q<1)put(c+.5,(r+.5)*A,q<.35?'@':q<.7?'%':'o',2)}}
+function drawRay(){if(C.bout<=0)return;for(let d=4;d<12;d+=1.2){const x=C.x+Math.cos(C.hd)*d,y=C.y+Math.sin(C.hd)*d,col=Math.floor(x),row=Math.floor(y/A);if(col<1||col>COLS-2||row<1||row>ROWS-2)break;const j=row*COLS+col;if(ch[j]===' '||ch[j]==='.'||ch[j]===':'){ch[j]=lineChar(C.hd);cl[j]=2}}}
+function drawSense(){for(let i=0;i<90;i++){const a=i/90*TAU,x=C.x+Math.cos(a)*senseR,y=C.y+Math.sin(a)*senseR,col=Math.floor(x),row=Math.floor(y/A);if(col<1||col>COLS-2||row<1||row>ROWS-2)continue;const j=row*COLS+col;if(ch[j]===' '||ch[j]==='.'){ch[j]=':';cl[j]=1}}}
+function drawTail(){for(let i=1;i<tail.length;i++){const a=tail[i-1],b=tail[i],g=lineChar(Math.atan2(b.y-a.y,b.x-a.x));for(let t=0;t<=1;t+=.34)put(a.x+(b.x-a.x)*t,a.y+(b.y-a.y)*t,i>tail.length-4?'.':g,0)}}
+function drawMouse(){const co=Math.cos(M.h),si=Math.sin(M.h),R=8*S;
+  for(let r=Math.floor((M.y-R)/A);r<=Math.ceil((M.y+R)/A);r++)for(let c=Math.floor(M.x-R);c<=Math.ceil(M.x+R);c++){
+    const wx=c+.5,wy=(r+.5)*A,dx=wx-M.x,dy=wy-M.y,u=(dx*co+dy*si)/S,v=(-dx*si+dy*co)/S;let g=null;
+    const qb=(u/3.5)**2+(v/2.2)**2,qh=((u-3.7)/2)**2+(v/1.4)**2,qe=((u-2.4)**2+(Math.abs(v)-1.9)**2)/1.1;
+    if(qe<1)g=qe<.45?'O':'o';if(qb<1)g=qb<.3?'@':qb<.7?'#':'*';if(qh<1)g=qh<.5?'#':'+';if(g)put(wx,wy,g,0)}
+  for(const s of[-1,1])put(M.x+(co*4.3-si*s*.75)*S,M.y+(si*4.3+co*s*.75)*S,'o',0);
+  for(const s of[-1,1])for(let k=1;k<=3;k++){const a=M.h+s*(0.9+k*.08),bx=M.x+(co*5.3-si*s*.5)*S,by=M.y+(si*5.3+co*s*.5)*S;put(bx+Math.cos(a)*k*1.1,by+Math.sin(a)*k*1.1,lineChar(a),1)}
+  const n=nose(),d=((M.h*180/Math.PI)%360+360)%360;put(n.x,n.y,d<45||d>=315?'>':d<135?'v':d<225?'<':'^',0)}
+function drawFlash(){if(flash<=0)return;const t=' * caught! chip respawns * ',row=Math.floor(ROWS/2),c0=Math.floor((COLS-t.length)/2);for(let j=0;j<t.length;j++){ch[row*COLS+c0+j]=t[j];cl[row*COLS+c0+j]=5}}
+function esc(g){return g==='<'?'&lt;':g==='>'?'&gt;':g==='&'?'&amp;':g}
+function render(){let h='';for(let r=0;r<ROWS;r++){let run='',k=-1;for(let c=0;c<COLS;c++){const i=r*COLS+c;if(cl[i]!==k){if(run)h+=k?'<span class="clh-k'+k+'">'+run+'</span>':run;run='';k=cl[i]}run+=esc(ch[i])}h+=k?'<span class="clh-k'+k+'">'+run+'</span>':run;if(r<ROWS-1)h+='\n'}scr.innerHTML=h}
+function clampIn(o,m){o.x=Math.max(X0+m,Math.min(X1-m,o.x));o.y=Math.max(Y0+m,Math.min(Y1-m,o.y))}
+function inside(x,y,m){return x>X0+m&&x<X1-m&&y>Y0+m&&y<Y1-m}
+
+function stepMouse(dt){
+  if(P){const ex=P.x-M.x,ey=P.y-M.y,d=Math.hypot(ex,ey),sp=Math.min(85,d*4),dvx=d>.01?ex/d*sp:0,dvy=d>.01?ey/d*sp:0;M.vx+=(dvx-M.vx)*Math.min(1,dt*5);M.vy+=(dvy-M.vy)*Math.min(1,dt*5)}else{M.vx*=.9;M.vy*=.9}
+  M.x+=M.vx*dt;M.y+=M.vy*dt;clampIn(M,3);const s=Math.hypot(M.vx,M.vy);
+  if(s>3){let dh=Math.atan2(M.vy,M.vx)-M.h;dh=Math.atan2(Math.sin(dh),Math.cos(dh));M.h+=dh*Math.min(1,dt*7)}
+  const rx=M.x-Math.cos(M.h)*3.5*S,ry=M.y-Math.sin(M.h)*3.5*S;if(!tail.length)for(let i=0;i<14;i++)tail.push({x:rx-i,y:ry});
+  tail[0]={x:rx,y:ry};const seg=1.15,w=Math.sin(performance.now()/180)*Math.min(1,s/20)*.35;
+  for(let i=1;i<tail.length;i++){const a=tail[i-1],b=tail[i];let dx=b.x-a.x,dy=b.y-a.y,l=Math.hypot(dx,dy)||1;if(l>seg){b.x=a.x+dx/l*seg;b.y=a.y+dy/l*seg}b.x+=-dy/l*w*i*.04;b.y+=dx/l*w*i*.04;b.y=Math.max(Y0+.5,Math.min(Y1-.5,b.y));b.x=Math.max(X0+.5,Math.min(X1-.5,b.x))}}
+
+// free distance along a ray before hitting the wall margin (capped)
+function clearance(a,cap){const cx=Math.cos(a),cy=Math.sin(a);let t=0;while(t<cap&&inside(C.x+cx*t,C.y+cy*t,3))t+=.5;return t}
+function stepChip(dt){
+  const n=nose(),dx=C.x-n.x,dy=C.y-n.y,d=Math.hypot(dx,dy);C.bout-=dt;let tvx=0,tvy=0;
+  // cornered = close to two walls at once; track how long
+  const walls=[C.x-X0,X1-C.x,C.y-Y0,Y1-C.y],near=walls.filter(w=>w<7).length;
+  C.cornered=near>=2?(C.cornered||0)+dt:0;
+  if(d<senseR){
+    if(C.bout<=0){
+      // reference heading = away from mouse + repulsion from nearby walls,
+      // so in a corner the reference swings out along a wall instead of into it
+      let rx=dx/d,ry=dy/d;const RW=14,KW=1.8;
+      if(walls[0]<RW)rx+=KW*((RW-walls[0])/RW)**2;if(walls[1]<RW)rx-=KW*((RW-walls[1])/RW)**2;
+      if(walls[2]<RW)ry+=KW*((RW-walls[2])/RW)**2;if(walls[3]<RW)ry-=KW*((RW-walls[3])/RW)**2;
+      const ref=Math.atan2(ry,rx);
+      // sample from the mixture; accept the first draw with enough room, else keep the roomiest
+      let rel=0,bestRel=0,bestC=-1;
+      for(let t=0;t<20;t++){rel=sampleRel();const c=clearance(ref+rel,12);if(c>bestC){bestC=c;bestRel=rel}if(c>=8)break}
+      rel=bestRel;
+      // stuck in a corner too long: dash along whichever wall leads away from the mouse, with von Mises jitter
+      if(C.cornered>.35){const cands=[0,Math.PI/2,Math.PI,-Math.PI/2].map(a=>({a,s:clearance(a,40)+3*Math.cos(a-Math.atan2(dy,dx))}));
+        cands.sort((p,q)=>q.s-p.s);rel=vm(cands[0].a,10)-ref;C.cornered=0}
+      C.hd=ref+rel;C.bout=(bestC<8?.18:.3)+Math.random()*.3;
+      samples.push({rel:Math.atan2(Math.sin(rel),Math.cos(rel)),t:performance.now()});if(samples.length>40)samples.shift()}
+    const boost=near>=2?1.25:1;
+    const sp=+spd.value*boost;tvx=Math.cos(C.hd)*sp;tvy=Math.sin(C.hd)*sp}
+  else if(C.bout>0){tvx=Math.cos(C.hd)*+spd.value*.5;tvy=Math.sin(C.hd)*+spd.value*.5}
+  // slide along walls: drop the velocity component pushing into a wall the chip is touching
+  if(C.x<=X0+3&&tvx<0||C.x>=X1-3&&tvx>0){tvy+=Math.sign(tvy||Math.random()-.5)*Math.abs(tvx)*.6;tvx=0}
+  if(C.y<=Y0+3&&tvy<0||C.y>=Y1-3&&tvy>0){tvx+=Math.sign(tvx||Math.random()-.5)*Math.abs(tvy)*.6;tvy=0}
+  C.vx+=(tvx-C.vx)*Math.min(1,dt*9);C.vy+=(tvy-C.vy)*Math.min(1,dt*9);C.x+=C.vx*dt;C.y+=C.vy*dt;clampIn(C,2.8);
+  if(d<3.4&&flash<=0){caught++;flash=1;best=Math.max(best,streak);streak=0;C.bout=0;let bd=-1;
+    for(let i=0;i<40;i++){const x=X0+5+Math.random()*(X1-X0-10),y=Y0+5+Math.random()*(Y1-Y0-10),dd=Math.hypot(x-M.x,y-M.y);if(dd>bd){bd=dd;C.x=x;C.y=y}}C.vx=C.vy=0}}
+
+// colors come from the demo's CSS tokens, which follow the site's light/dark toggle
+function tok(v){return getComputedStyle(root).getPropertyValue(v).trim()||'#888'}
+function drawPolar(){const W=180,cx=90,cy=92,R0=24,Rm=50;pc.clearRect(0,0,W,W);const mu=tok('--muted'),sec=tok('--soft'),chip=tok('--chip');
+  pc.strokeStyle=mu;pc.lineWidth=.6;pc.setLineDash([2,3]);pc.beginPath();pc.arc(cx,cy,R0,0,TAU);pc.stroke();pc.beginPath();pc.arc(cx,cy,R0+Rm,0,TAU);pc.stroke();pc.setLineDash([]);
+  let mx=0;const N=180,vals=[];for(let i=0;i<=N;i++){const v=pdf(i/N*TAU-Math.PI);vals.push(v);mx=Math.max(mx,v)}
+  if(!mx)mx=1;pc.strokeStyle=mu;pc.lineWidth=.8;
+  for(const q of modes()){pc.beginPath();for(let i=0;i<=N;i++){const th=i/N*TAU-Math.PI,r=R0+q.w*vmpdf(th,q.mu,q.k)/mx*Rm,a=th-Math.PI/2,x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r;i?pc.lineTo(x,y):pc.moveTo(x,y)}pc.stroke()}
+  pc.strokeStyle=chip;pc.lineWidth=1.5;pc.beginPath();for(let i=0;i<=N;i++){const th=i/N*TAU-Math.PI,r=R0+vals[i]/mx*Rm,a=th-Math.PI/2,x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r;i?pc.lineTo(x,y):pc.moveTo(x,y)}pc.stroke();
+  const now=performance.now();pc.fillStyle=chip;for(const s of samples){const age=Math.min(1,(now-s.t)/6000),a=s.rel-Math.PI/2;pc.globalAlpha=1-age*.8;pc.beginPath();pc.arc(cx+Math.cos(a)*(R0-6),cy+Math.sin(a)*(R0-6),2.2,0,TAU);pc.fill()}pc.globalAlpha=1;
+  pc.fillStyle=sec;pc.font='11px '+tok('--mono');pc.textAlign='center';pc.fillText('away',cx,11);pc.fillText('mouse',cx,W-3);
+  pc.strokeStyle=sec;pc.lineWidth=1;pc.beginPath();pc.moveTo(cx,cy+8);pc.lineTo(cx,cy+R0-4);pc.stroke();
+  pc.beginPath();pc.moveTo(cx,cy-8);pc.lineTo(cx,cy-R0+4);pc.moveTo(cx-3,cy-R0+8);pc.lineTo(cx,cy-R0+4);pc.lineTo(cx+3,cy-R0+8);pc.stroke()}
+
+function ptr(e){const r=scr.getBoundingClientRect();P={x:(e.clientX-r.left)/r.width*COLS,y:(e.clientY-r.top)/r.height*ROWS*A}}
+scr.addEventListener('pointermove',ptr);scr.addEventListener('pointerdown',ptr);scr.addEventListener('pointerleave',()=>{P=null});
+
+let last=performance.now();
+function frame(t){const dt=Math.min(.05,Math.max(0,(t-last)/1000));last=t;if(flash>0)flash-=dt;else streak+=dt;
+  stepMouse(dt);if(flash<=0)stepChip(dt);
+  clear();if(showR.checked)drawSense();drawRay();drawChip();drawTail();drawMouse();drawFlash();render();drawPolar();
+  $('caught').textContent=caught;$('streak').textContent=streak.toFixed(1)+'s';$('best').textContent=Math.max(best,streak).toFixed(1)+'s';
+  requestAnimationFrame(frame)}
+dpr();clear();render();fit();M.y=C.y=(Y0+Y1)/2;
+window.addEventListener('resize',fit);
+if(document.fonts)document.fonts.ready.then(fit);
+requestAnimationFrame(frame);
+})();
+{% endraw %}
+</script>
