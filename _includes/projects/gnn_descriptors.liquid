@@ -1,0 +1,110 @@
+<!-- GNN + expert descriptors demo: the blind men and the elephant. The cursor is a hand that only uncovers a small patch (GNN message passing); the expert's tag (descriptors) adds whole-animal facts. Self-contained; all ids/classes prefixed "gnd". -->
+<style>
+.gnd{--fg:var(--global-text-color);--soft:var(--global-text-color-light);--line:var(--global-divider-color);--muted:#a3a19a;--panel:rgba(0,0,0,.035);--hand:#0f7a5c;--tag:#9a5a1c;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;display:flex;flex-direction:column;gap:14px;margin:3rem 0 2rem;color:var(--fg)}
+html[data-theme="dark"] .gnd{--muted:#6c6a62;--panel:rgba(255,255,255,.06);--hand:#5dcaa5;--tag:#e0a35c}
+.gnd .gnd-head{display:flex;flex-direction:column;gap:6px}
+.gnd .gnd-head h2{margin:0;font-weight:400;text-wrap:balance}
+.gnd .gnd-head h2 span{color:var(--soft);font-weight:400}
+.gnd .gnd-head p{margin:0}
+.gnd .gnd-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:13px;color:var(--soft)}
+.gnd .gnd-ctl label{display:flex;align-items:center;gap:8px;margin:0}
+.gnd input[type=checkbox]{position:static!important;opacity:1!important;pointer-events:auto!important;visibility:visible!important;margin:0;accent-color:var(--tag)}
+.gnd button{font:inherit;font-size:12px;font-weight:400;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:3px 10px;cursor:pointer;box-shadow:none}
+.gnd button:hover{border-color:var(--soft)}
+.gnd .gnd-wrap{width:100%;text-align:center;overflow:hidden}
+.gnd .gnd-scn{font-family:var(--mono);line-height:1.2;margin:0;white-space:pre;display:inline-block;text-align:left;cursor:none;user-select:none;touch-action:none;color:var(--fg)}
+.gnd .gnd-f{color:var(--muted);opacity:.55}.gnd .gnd-e{color:var(--fg);font-weight:700}.gnd .gnd-s{color:var(--soft)}.gnd .gnd-d{color:var(--muted)}
+.gnd .gnd-h{color:var(--hand);font-weight:700}.gnd .gnd-ok{color:var(--hand);font-weight:700}.gnd .gnd-t{color:var(--tag)}.gnd .gnd-tb{color:var(--tag);font-weight:700}
+.gnd .gnd-legend{font-size:12px;color:var(--soft);display:flex;flex-wrap:wrap;gap:6px 16px}
+.gnd .gnd-legend b{font-weight:500}
+.gnd button:focus-visible,.gnd input:focus-visible{outline:2px solid var(--tag);outline-offset:2px}
+</style>
+<div class="gnd" id="gnd-root">
+  <div class="gnd-head">
+    <h2>The blind men and the molecule <span>(2023)</span></h2>
+    <p>A graph neural network (GNN) learns the structure of a molecule the way the blind men learned about the elephant: because of its limited receptive field, each atom only feels its neighbors. Attaching expert-crafted descriptors to the learned representation gives the GNN global features that are hard to infer from atomic features alone. At the Meiler Lab (Vanderbilt University), I tested whether combining the two could identify active drug candidates more accurately, with the aim of speeding up computer-aided drug discovery.</p>
+  </div>
+  <div class="gnd-ctl">
+    <label><input id="gnd-tag" type="checkbox">Add the expert's tag (descriptors)</label>
+    <button id="gnd-reset" type="button">Reset touches</button>
+    <span>Move your cursor over the fog to touch the animal.</span>
+  </div>
+  <div class="gnd-wrap" id="gnd-wrap"><div class="gnd-scn" id="gnd-scn" role="img" aria-label="A fog-covered ASCII elephant; the cursor uncovers a small patch and guesses what it feels, and an optional expert's tag lists whole-animal facts">.</div></div>
+  <div class="gnd-legend">
+    <span><b style="color:var(--hand)">hand</b> = GNN message passing: each atom only feels its neighbors</span>
+    <span><b style="color:var(--tag)">tag</b> = expert-crafted descriptors: whole-molecule facts</span>
+  </div>
+</div>
+<script>
+{% raw %}
+(function(){
+const ART=String.raw`                .-'''''''''''''''''''''''-.
+          __.-''                           ''-.
+        .'  .--.                              \
+       /   /    \                              \
+  .-. |   |      |                              |
+ / o \|   |      |                              |\
+|     |    \    /                               | \
+ \    |     '--'                                |  ~
+  |  |\                                         /
+  |  | \___                                    /
+  |  |  ==='-.   .---------------------.    .-'
+  |  |       |   |                     |   |
+  (__)       |___|                     |___|`.split('\n');
+const AW=53,AH=ART.length,COLS=82,ROWS=18,OY=1;
+const $=id=>document.getElementById('gnd-'+id);
+const scn=$('scn'),wrap=$('wrap'),tag=$('tag');
+const GUESS={trunk:'a snake',ear:'a fan',leg:'a tree trunk',tusk:'a spear',tail:'a rope',body:'a wall',head:'a big pot'};
+// which part of the elephant a cell belongs to
+function region(c,r){
+  if(r<0||r>=AH||c<0||c>=AW)return null;
+  if(c<=5&&r>=8)return'trunk';
+  if(r>=9&&r<=10&&c>=6&&c<=12)return'tusk';
+  if(r>=10&&((c>=13&&c<=17)||(c>=38&&c<=44)))return'leg';
+  if(c>=48&&r>=4&&r<=8)return'tail';
+  if(c<=6&&r>=4&&r<=7)return'head';
+  if(c>=7&&c<=17&&r>=1&&r<=7)return'ear';
+  if(c>=6&&r<=10&&c<=47)return'body';
+  return null}
+const ch=new Array(COLS*ROWS),cl=new Array(COLS*ROWS),seen=new Float32Array(AW*AH);
+let P=null,auto=0,votes={},parts=new Set(),last=performance.now();
+$('reset').onclick=()=>{votes={};parts=new Set();seen.fill(0)};
+function put(c,r,g,k){if(c<0||c>=COLS||r<0||r>=ROWS)return;ch[r*COLS+c]=g;cl[r*COLS+c]=k}
+function text(c,r,s,k){for(let j=0;j<s.length;j++)put(c+j,r,s[j],k)}
+function bar(f,n){const k=Math.round(Math.max(0,Math.min(1,f))*n);return '#'.repeat(k)+'.'.repeat(n-k)}
+function frame(t){
+  const dt=Math.min(.05,Math.max(0,(t-last)/1000));last=t;
+  let hand=P;
+  if(!hand){auto+=dt;hand={c:26+22*Math.sin(auto*.45),r:6+5.5*Math.sin(auto*.83+1)}}
+  const hc=Math.round(hand.c),hr=Math.round(hand.r)-OY,R=4.2;
+  // uncover a small patch around the hand; uncovered cells fade back into fog
+  for(let r=0;r<AH;r++)for(let c=0;c<AW;c++){const d=Math.hypot(c-hc,(r-hr)*2),i=r*AW+c;if(d<R)seen[i]=1;else seen[i]=Math.max(0,seen[i]-dt*.35)}
+  const reg=region(hc,hr);
+  if(reg){votes[reg]=(votes[reg]||0)+dt;parts.add(reg)}
+  ch.fill(' ');cl.fill(0);
+  for(let r=0;r<AH;r++)for(let c=0;c<AW;c++){const s=seen[r*AW+c],g=(ART[r][c]||' ');
+    if(s>0.5)put(c,r+OY,g,s>0.99?'e':'s');else if(s>0)put(c,r+OY,g===' '?' ':':','f');else put(c,r+OY,(c+r)%2?'░':'▒','f')}
+  if(reg){const msg='"'+GUESS[reg]+'?"',bc=Math.max(0,Math.min(AW-msg.length,hc-Math.floor(msg.length/2))),br=hr+OY-3<0?hr+OY+3:hr+OY-3;text(bc,br,msg,'h')}
+  put(hc,hr+OY,'@','h');
+  const TX=57;
+  if(tag.checked){
+    text(48,OY+1,'---------o','t');
+    ['+----------------------+','| EXPERT\'S TAG         |','| weight ........ 5 t  |','| height ........ 3 m  |','| skin ......... grey  |','| diet ....... plants  |','| lifespan ..... 60 y  |','+----------------------+'].forEach((s,i)=>text(TX,OY+i,s,i===1?'tb':'t'))}
+  else ['+ - - - - - - - - - - -+','  no expert tag','+ - - - - - - - - - - -+'].forEach((s,i)=>text(TX,OY+2+i*2,s,'d'));
+  const tot=Object.values(votes).reduce((s,x)=>s+x,0),rank=Object.entries(votes).sort((a,b)=>b[1]-a[1]),y=OY+AH+1;
+  if(tot>0){const top=rank.slice(0,3).map(([k,v])=>GUESS[k].replace('a ','')+' '+Math.round(v/tot*100)+'%').join(' | ');text(0,y,'touches only (GNN):    '+top,'s');text(23,y,top,'h')}
+  else text(0,y,'touches only (GNN):    touch the animal to start voting','s');
+  if(tag.checked){text(0,y+1,'tag only (descriptors): ','s');text(24,y+1,'big grey herbivore: elephant 55% | rhino 25% | hippo 20%','t')}
+  else text(0,y+1,'tag only (descriptors): off','d');
+  if(tag.checked&&parts.size>0){const conf=Math.min(97,55+parts.size*9);text(0,y+2,'together:','s');text(24,y+2,'ELEPHANT ['+bar(conf/100,20)+'] '+conf+'%','ok')}
+  else if(tot>0){text(0,y+2,'together:','s');text(24,y+2,'"probably '+GUESS[rank[0][0]]+'"  (add the tag)','d')}
+  else text(0,y+2,'together:              --','d');
+  let h='';for(let r=0;r<ROWS;r++){let run='',k=-1;for(let c=0;c<COLS;c++){const i=r*COLS+c;if(cl[i]!==k){if(run)h+=k?'<span class="gnd-'+k+'">'+run+'</span>':run;run='';k=cl[i]}const g=ch[i];run+=g==='<'?'&lt;':g==='>'?'&gt;':g==='&'?'&amp;':g}h+=k?'<span class="gnd-'+k+'">'+run+'</span>':run;if(r<ROWS-1)h+='\n'}
+  scn.innerHTML=h;requestAnimationFrame(frame)}
+function fit(){scn.style.fontSize=Math.min(13,wrap.clientWidth/(COLS*0.62)).toFixed(2)+'px'}
+function ptr(e){const r=scn.getBoundingClientRect();P={c:(e.clientX-r.left)/r.width*COLS,r:(e.clientY-r.top)/r.height*ROWS}}
+scn.addEventListener('pointermove',ptr);scn.addEventListener('pointerdown',ptr);scn.addEventListener('pointerleave',()=>{P=null});
+fit();window.addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);requestAnimationFrame(frame);
+})();
+{% endraw %}
+</script>
