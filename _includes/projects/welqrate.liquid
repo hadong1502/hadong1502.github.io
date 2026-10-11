@@ -19,7 +19,7 @@ html[data-theme="dark"] .wlq{--muted:#6c6a62;--panel:rgba(255,255,255,.06);--gol
 <div class="wlq" id="wlq-root">
   <div class="wlq-head">
     <h2>WelQrate <span>(2024)</span></h2>
-    <p>While deep learning has revolutionized computer-aided drug discovery, the AI community has predominantly focused on model innovation and placed less emphasis on establishing best benchmarking practices. We posit that without a sound model evaluation framework, the AI community’s efforts cannot reach their full potential, thereby slowing the progress and transfer of innovation into real-world drug discovery. With collaborators at the Meiler Lab and the Network and Data Science Lab (Vanderbilt University), I created WelQrate, a gold-standard benchmark and data collection for small molecule drug discovery (<a href="https://papers.nips.cc/paper_files/paper/2024/file/5f2f8305cd1c5be7e8319aea306388ce-Paper-Datasets_and_Benchmarks_Track.pdf" target="_blank" rel="noopener" title="Liu, Dong, Wang et al. (2024). WelQrate: Defining the Gold Standard in Small Molecule Drug Discovery Benchmarking. NeurIPS 2024 Datasets and Benchmarks Track.">Liu et al., 2024</a>).</p>
+    <p>While deep learning has revolutionized computer-aided drug discovery, the AI community has predominantly focused on model innovation and placed less emphasis on establishing best benchmarking practices. We posit that without a sound model evaluation framework, the AI community’s efforts cannot reach their full potential, thereby slowing the progress and transfer of innovation into real-world drug discovery. With collaborators at the Meiler Lab and the Network and Data Science Lab (Vanderbilt University), I created WelQrate, a gold-standard benchmark and data collection for small molecule drug discovery (see our paper at <a href="https://papers.nips.cc/paper_files/paper/2024/file/5f2f8305cd1c5be7e8319aea306388ce-Paper-Datasets_and_Benchmarks_Track.pdf" target="_blank" rel="noopener">NeurIPS</a>).</p>
   </div>
   <div class="wlq-ctl">
     <span>Click a sieve to switch it on or off.</span>
@@ -31,7 +31,6 @@ html[data-theme="dark"] .wlq{--muted:#6c6a62;--panel:rgba(255,255,255,.06);--gol
     <span><b style="color:var(--gold)">*</b> real gold = validated active</span>
     <span><b style="color:var(--pyr)">+</b> fool's gold = false positive from the primary screen</span>
     <span><b style="color:var(--bad)">x</b> caught by a sieve</span>
-    <span>Which sieve catches what is illustrative; the overall ratio follows AID 1798.</span>
   </div>
 </div>
 <script>
@@ -66,7 +65,7 @@ function frame(t){
   parts=parts.filter(p=>!p.dead);
   for(const s of stuck)s.life-=dt;stuck=stuck.filter(s=>s.life>0);
   ch.fill(' ');cl.fill(0);
-  text(X0,0,'primary HTS "actives"   v v v','m');
+  text(X0,0,'primary high-throughput screening "actives"   v v v','m');
   for(let i=0;i<3;i++){const s=SIEVES[i];
     for(let c=X0;c<=X1;c++)put(c,s.row,s.on?'=':(c%2?'-':' '),s.on?'on':'m');
     text(X1+2,s.row,(s.on?'[x] ':'[ ] ')+s.name,s.on?'on':'s');
@@ -76,7 +75,7 @@ function frame(t){
   text(X0-1,16,'\\'+' '.repeat(X1-X0+1)+'/','s');
   text(X0,17,'\\'+'_'.repeat(X1-X0-1)+'/','s');
   const view=pan.slice(-(X1-X0-1));for(let i=0;i<view.length;i++)put(X0+1+i,16,view[i]==='g'?'*':'+',view[i]);
-  text(X0+1,18,'the pan = the dataset\'s "actives"','m');
+  text(X0+1,18,'the pan = our dataset\'s "actives"','m');
   text(0,20,'AID 1798: 63,676 screened -> 1,665 primary hits -> 164 validated actives (0.27%)','s');
   const g=pan.filter(x=>x==='g').length,f=pan.length-g,pur=pan.length?g/pan.length:0,CX=60;
   ['+----------------------+','| IN THE PAN, LAST 100 |','| real gold    *   '+String(g).padStart(3)+' |','| fool\'s gold  +   '+String(f).padStart(3)+' |','|                      |','| real actives         |','| ['+bar(pur,14)+'] '+String(Math.round(pur*100)).padStart(3)+'% |','+----------------------+','| caught by sieves     |','| confirmatory  '+String(caught[0]).padStart(6)+' |','| counter       '+String(caught[1]).padStart(6)+' |','| PAINS         '+String(caught[2]).padStart(6)+' |','+----------------------+'].forEach((s,i)=>text(CX,1+i,s,'s'));
