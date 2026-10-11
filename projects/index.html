@@ -153,7 +153,62 @@ if(document.fonts)document.fonts.ready.then(fit);
 requestAnimationFrame(frame);
 })();
 
-</script> <style>.gnd{--fg:var(--global-text-color);--soft:var(--global-text-color-light);--line:var(--global-divider-color);--muted:#a3a19a;--panel:rgba(0,0,0,.035);--hand:#0f7a5c;--tag:#9a5a1c;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;display:flex;flex-direction:column;gap:14px;margin:3rem 0 2rem;color:var(--fg)}html[data-theme="dark"] .gnd{--muted:#6c6a62;--panel:rgba(255,255,255,.06);--hand:#5dcaa5;--tag:#e0a35c}.gnd .gnd-head{display:flex;flex-direction:column;gap:6px}.gnd .gnd-head h2{margin:0;font-weight:400;text-wrap:balance}.gnd .gnd-head h2 span{color:var(--soft);font-weight:400}.gnd .gnd-head p{margin:0}.gnd .gnd-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:13px;color:var(--soft)}.gnd .gnd-ctl label{display:flex;align-items:center;gap:8px;margin:0}.gnd input[type=checkbox]{position:static!important;opacity:1!important;pointer-events:auto!important;visibility:visible!important;margin:0;accent-color:var(--tag)}.gnd button{font:inherit;font-size:12px;font-weight:400;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:3px 10px;cursor:pointer;box-shadow:none}.gnd button:hover{border-color:var(--soft)}.gnd .gnd-wrap{width:100%;text-align:center;overflow:hidden}.gnd .gnd-scn{font-family:var(--mono);line-height:1.2;margin:0;white-space:pre;display:inline-block;text-align:left;cursor:none;user-select:none;touch-action:none;color:var(--fg)}.gnd .gnd-f{color:var(--muted);opacity:.55}.gnd .gnd-e{color:var(--fg);font-weight:700}.gnd .gnd-s{color:var(--soft)}.gnd .gnd-d{color:var(--muted)}.gnd .gnd-h{color:var(--hand);font-weight:700}.gnd .gnd-ok{color:var(--hand);font-weight:700}.gnd .gnd-t{color:var(--tag)}.gnd .gnd-tb{color:var(--tag);font-weight:700}.gnd .gnd-legend{font-size:12px;color:var(--soft);display:flex;flex-wrap:wrap;gap:6px 16px}.gnd .gnd-legend b{font-weight:500}.gnd button:focus-visible,.gnd input:focus-visible{outline:2px solid var(--tag);outline-offset:2px}</style> <div class="gnd" id="gnd-root"> <div class="gnd-head"> <h2>The blind men and the molecule <span>(2023)</span> </h2> <p>A graph neural network (GNN) learns the structure of a molecule the way the blind men learned about the elephant: because of its limited receptive field, each atom only feels its neighbors. Attaching expert-crafted descriptors to the learned representation gives the GNN global features that are hard to infer from atomic features alone. At the Meiler Lab (Vanderbilt University), I tested whether combining the two could identify active drug candidates more accurately, with the aim of speeding up computer-aided drug discovery (<a href="https://doi.org/10.1101/2023.04.17.537185" target="_blank" rel="noopener" title="Liu, Moretti, Wang, Dong, Yan, Bodenheimer, Derr and Meiler (2023). Advancements in Ligand-Based Virtual Screening through the Synergistic Integration of Graph Neural Networks and Expert-Crafted Descriptors. bioRxiv.">Liu et al., 2023</a>).</p> </div> <div class="gnd-ctl"> <label><input id="gnd-tag" type="checkbox">Add the expert's tag (descriptors)</label> <button id="gnd-reset" type="button">Reset touches</button> <span>Move your cursor over the fog to touch the animal.</span> </div> <div class="gnd-wrap" id="gnd-wrap"><div class="gnd-scn" id="gnd-scn" role="img" aria-label="A fog-covered ASCII elephant; the cursor uncovers a small patch and guesses what it feels, and an optional expert's tag lists whole-animal facts">.</div></div> <div class="gnd-legend"> <span><b style="color:var(--hand)">hand</b> = GNN message passing: each atom only feels its neighbors</span> <span><b style="color:var(--tag)">tag</b> = expert-crafted descriptors: whole-molecule facts</span> </div> </div> <script>
+</script> <style>.wlq{--fg:var(--global-text-color);--soft:var(--global-text-color-light);--line:var(--global-divider-color);--muted:#a3a19a;--panel:rgba(0,0,0,.035);--gold:#9a5a1c;--pyr:#7d7335;--bad:#c0392b;--ok:#0f7a5c;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;display:flex;flex-direction:column;gap:14px;margin:3rem 0 2rem;color:var(--fg)}html[data-theme="dark"] .wlq{--muted:#6c6a62;--panel:rgba(255,255,255,.06);--gold:#e0a35c;--pyr:#b0a565;--bad:#f09595;--ok:#5dcaa5}.wlq .wlq-head{display:flex;flex-direction:column;gap:6px}.wlq .wlq-head h2{margin:0;font-weight:400;text-wrap:balance}.wlq .wlq-head h2 span{color:var(--soft);font-weight:400}.wlq .wlq-head p{margin:0}.wlq .wlq-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:13px;color:var(--soft)}.wlq button{font:inherit;font-size:12px;font-weight:400;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:3px 10px;cursor:pointer;box-shadow:none}.wlq button:hover{border-color:var(--soft)}.wlq .wlq-wrap{width:100%;text-align:center;overflow:hidden}.wlq .wlq-scn{font-family:var(--mono);line-height:1.2;margin:0;white-space:pre;display:inline-block;text-align:left;user-select:none;cursor:default;color:var(--fg)}.wlq .wlq-g{color:var(--gold);font-weight:700}.wlq .wlq-p{color:var(--pyr)}.wlq .wlq-x{color:var(--bad);font-weight:700}.wlq .wlq-m{color:var(--muted)}.wlq .wlq-s{color:var(--soft)}.wlq .wlq-on{color:var(--fg);font-weight:700}.wlq .wlq-ok{color:var(--ok);font-weight:700}.wlq .wlq-legend{font-size:12px;color:var(--soft);display:flex;flex-wrap:wrap;gap:6px 16px}.wlq .wlq-legend b{font-weight:700;font-family:var(--mono)}.wlq button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}</style> <div class="wlq" id="wlq-root"> <div class="wlq-head"> <h2>WelQrate <span>(2024)</span> </h2> <p>While deep learning has revolutionized computer-aided drug discovery, the AI community has predominantly focused on model innovation and placed less emphasis on establishing best benchmarking practices. We posit that without a sound model evaluation framework, the AI community’s efforts cannot reach their full potential, thereby slowing the progress and transfer of innovation into real-world drug discovery. With collaborators at the Meiler Lab and the Network and Data Science Lab (Vanderbilt University), I created WelQrate, a gold-standard benchmark and data collection for small molecule drug discovery (see our paper at <a href="https://papers.nips.cc/paper_files/paper/2024/file/5f2f8305cd1c5be7e8319aea306388ce-Paper-Datasets_and_Benchmarks_Track.pdf" target="_blank" rel="noopener">NeurIPS</a>).</p> </div> <div class="wlq-ctl"> <span>Click a sieve to switch it on or off.</span> <button id="wlq-all" type="button">All sieves on</button> <button id="wlq-none" type="button">All off</button> </div> <div class="wlq-wrap" id="wlq-wrap"><div class="wlq-scn" id="wlq-scn" role="img" aria-label="Primary screen hits fall through curation sieves into a pan; switching sieves on removes false positives and raises the share of real actives">.</div></div> <div class="wlq-legend"> <span><b style="color:var(--gold)">*</b> real gold = validated active</span> <span><b style="color:var(--pyr)">+</b> fool's gold = false positive from the primary screen</span> <span><b style="color:var(--bad)">x</b> caught by a sieve</span> </div> </div> <script>
+
+(function(){
+const COLS=84,ROWS=21,X0=2,X1=31;
+const SIEVES=[{row:5,name:'confirmatory screen',on:false,why:'not confirmed'},{row:9,name:'counter screen',on:false,why:'wrong target'},{row:13,name:'PAINS filter',on:false,why:'interference'}];
+// share of primary-screen hits: ~1 in 10 is real (AID 1798: 1,665 hits -> 164 actives); the rest is split across the sieves
+const MIX=[['gold',.1],[0,.5],[1,.28],[2,.12]];
+const $=id=>document.getElementById('wlq-'+id);
+const scn=$('scn'),wrap=$('wrap');
+const ch=new Array(COLS*ROWS),cl=new Array(COLS*ROWS);
+let parts=[],stuck=[],pan=[],caught=[0,0,0],spawn=0,last=performance.now(),touched=false,autoT=0,autoStep=0;
+function put(c,r,g,k){if(c<0||c>=COLS||r<0||r>=ROWS)return;ch[r*COLS+c]=g;cl[r*COLS+c]=k}
+function text(c,r,s,k){for(let j=0;j<s.length;j++)put(c+j,r,s[j],k)}
+function bar(f,n){const k=Math.round(Math.max(0,Math.min(1,f))*n);return '#'.repeat(k)+'.'.repeat(n-k)}
+function pick(){let u=Math.random();for(const [t,w] of MIX){if(u<w)return t;u-=w}return 2}
+function setAll(v){SIEVES.forEach(s=>s.on=v);touched=true}
+$('all').onclick=()=>setAll(true);
+$('none').onclick=()=>setAll(false);
+function rowOf(e){const r=scn.getBoundingClientRect();return Math.floor((e.clientY-r.top)/r.height*ROWS)}
+scn.addEventListener('click',e=>{const row=rowOf(e),s=SIEVES.find(s=>s.row===row||s.row+1===row);if(s){s.on=!s.on;touched=true}});
+scn.addEventListener('pointermove',e=>{const row=rowOf(e);scn.style.cursor=SIEVES.some(s=>s.row===row||s.row+1===row)?'pointer':'default'});
+function frame(t){
+  const dt=Math.min(.05,Math.max(0,(t-last)/1000));last=t;
+  // until someone clicks, switch the sieves on one at a time, then start over
+  if(!touched){autoT+=dt;if(autoT>3.5){autoT=0;autoStep=(autoStep+1)%5;SIEVES.forEach((s,i)=>s.on=i<Math.min(autoStep,3))}}
+  spawn+=dt*18;while(spawn>=1){spawn--;parts.push({x:X0+1+Math.random()*(X1-X0-2),y:1.5,v:7+Math.random()*3,t:pick()})}
+  for(const p of parts){const y0=p.y;p.y+=p.v*dt;p.x+=Math.sin(t/300+p.v*7)*dt*.8;p.x=Math.max(X0+1,Math.min(X1-1,p.x));
+    for(let i=0;i<3;i++){const s=SIEVES[i];if(s.on&&p.t===i&&y0<s.row&&p.y>=s.row){p.dead=1;caught[i]++;stuck.push({x:p.x,row:s.row,life:1.4})}}
+    if(!p.dead&&p.y>=16){p.dead=1;pan.push(p.t==='gold'?'g':'p');if(pan.length>100)pan.shift()}}
+  parts=parts.filter(p=>!p.dead);
+  for(const s of stuck)s.life-=dt;stuck=stuck.filter(s=>s.life>0);
+  ch.fill(' ');cl.fill(0);
+  text(X0,0,'primary high-throughput screening "actives"   v v v','m');
+  for(let i=0;i<3;i++){const s=SIEVES[i];
+    for(let c=X0;c<=X1;c++)put(c,s.row,s.on?'=':(c%2?'-':' '),s.on?'on':'m');
+    text(X1+2,s.row,(s.on?'[x] ':'[ ] ')+s.name,s.on?'on':'s');
+    text(X1+6,s.row+1,s.on?'catches: '+s.why:'(open)',s.on?'s':'m')}
+  for(const p of parts)put(Math.round(p.x),Math.floor(p.y),p.t==='gold'?'*':'+',p.t==='gold'?'g':'p');
+  for(const s of stuck)put(Math.round(s.x),s.row,'x','x');
+  text(X0-1,16,'\\'+' '.repeat(X1-X0+1)+'/','s');
+  text(X0,17,'\\'+'_'.repeat(X1-X0-1)+'/','s');
+  const view=pan.slice(-(X1-X0-1));for(let i=0;i<view.length;i++)put(X0+1+i,16,view[i]==='g'?'*':'+',view[i]);
+  text(X0+1,18,'the pan = our dataset\'s "actives"','m');
+  text(0,20,'AID 1798: 63,676 screened -> 1,665 primary hits -> 164 validated actives (0.27%)','s');
+  const g=pan.filter(x=>x==='g').length,f=pan.length-g,pur=pan.length?g/pan.length:0,CX=60;
+  ['+----------------------+','| IN THE PAN, LAST 100 |','| real gold    *   '+String(g).padStart(3)+' |','| fool\'s gold  +   '+String(f).padStart(3)+' |','|                      |','| real actives         |','| ['+bar(pur,14)+'] '+String(Math.round(pur*100)).padStart(3)+'% |','+----------------------+','| caught by sieves     |','| confirmatory  '+String(caught[0]).padStart(6)+' |','| counter       '+String(caught[1]).padStart(6)+' |','| PAINS         '+String(caught[2]).padStart(6)+' |','+----------------------+'].forEach((s,i)=>text(CX,1+i,s,'s'));
+  text(CX+15,3,'*','g');text(CX+15,4,'+','p');text(CX+3,7,bar(pur,14),pur>.9?'ok':pur>.5?'g':'x');
+  text(CX,15,pur>.95?'clean labels: actives':'noisy labels: most',pur>.95?'ok':'x');
+  text(CX,16,pur>.95?'are really active':'"actives" are not',pur>.95?'ok':'x');
+  let h='';for(let r=0;r<ROWS;r++){let run='',k=-1;for(let c=0;c<COLS;c++){const i=r*COLS+c;if(cl[i]!==k){if(run)h+=k?'<span class="wlq-'+k+'">'+run+'</span>':run;run='';k=cl[i]}const gch=ch[i];run+=gch==='<'?'&lt;':gch==='>'?'&gt;':gch==='&'?'&amp;':gch}h+=k?'<span class="wlq-'+k+'">'+run+'</span>':run;if(r<ROWS-1)h+='\n'}
+  scn.innerHTML=h;requestAnimationFrame(frame)}
+function fit(){scn.style.fontSize=Math.min(13,wrap.clientWidth/(COLS*0.62)).toFixed(2)+'px'}
+fit();window.addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);requestAnimationFrame(frame);
+})();
+
+</script> <style>.gnd{--fg:var(--global-text-color);--soft:var(--global-text-color-light);--line:var(--global-divider-color);--muted:#a3a19a;--panel:rgba(0,0,0,.035);--hand:#0f7a5c;--tag:#9a5a1c;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;display:flex;flex-direction:column;gap:14px;margin:3rem 0 2rem;color:var(--fg)}html[data-theme="dark"] .gnd{--muted:#6c6a62;--panel:rgba(255,255,255,.06);--hand:#5dcaa5;--tag:#e0a35c}.gnd .gnd-head{display:flex;flex-direction:column;gap:6px}.gnd .gnd-head h2{margin:0;font-weight:400;text-wrap:balance}.gnd .gnd-head h2 span{color:var(--soft);font-weight:400}.gnd .gnd-head p{margin:0}.gnd .gnd-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:13px;color:var(--soft)}.gnd .gnd-ctl label{display:flex;align-items:center;gap:8px;margin:0}.gnd input[type=checkbox]{position:static!important;opacity:1!important;pointer-events:auto!important;visibility:visible!important;margin:0;accent-color:var(--tag)}.gnd button{font:inherit;font-size:12px;font-weight:400;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:3px 10px;cursor:pointer;box-shadow:none}.gnd button:hover{border-color:var(--soft)}.gnd .gnd-wrap{width:100%;text-align:center;overflow:hidden}.gnd .gnd-scn{font-family:var(--mono);line-height:1.2;margin:0;white-space:pre;display:inline-block;text-align:left;cursor:none;user-select:none;touch-action:none;color:var(--fg)}.gnd .gnd-f{color:var(--muted);opacity:.55}.gnd .gnd-e{color:var(--fg);font-weight:700}.gnd .gnd-s{color:var(--soft)}.gnd .gnd-d{color:var(--muted)}.gnd .gnd-h{color:var(--hand);font-weight:700}.gnd .gnd-ok{color:var(--hand);font-weight:700}.gnd .gnd-t{color:var(--tag)}.gnd .gnd-tb{color:var(--tag);font-weight:700}.gnd .gnd-legend{font-size:12px;color:var(--soft);display:flex;flex-wrap:wrap;gap:6px 16px}.gnd .gnd-legend b{font-weight:500}.gnd button:focus-visible,.gnd input:focus-visible{outline:2px solid var(--tag);outline-offset:2px}</style> <div class="gnd" id="gnd-root"> <div class="gnd-head"> <h2>The blind men and the molecule <span>(2023)</span> </h2> <p>A graph neural network (GNN) learns the structure of a molecule the way the blind men learned about the elephant: because of its limited receptive field, each atom only feels its neighbors. Attaching expert-crafted descriptors to the learned representation gives the GNN global features that are hard to infer from atomic features alone. At the Meiler Lab (Vanderbilt University), I tested whether combining the two could identify active drug candidates more accurately, with the aim of speeding up computer-aided drug discovery (see our paper at <a href="https://doi.org/10.1101/2023.04.17.537185" target="_blank" rel="noopener">bioRxiv</a>).</p> </div> <div class="gnd-ctl"> <label><input id="gnd-tag" type="checkbox">Add the expert's tag (descriptors)</label> <button id="gnd-reset" type="button">Reset touches</button> <span>Move your cursor over the fog to touch the animal.</span> </div> <div class="gnd-wrap" id="gnd-wrap"><div class="gnd-scn" id="gnd-scn" role="img" aria-label="A fog-covered ASCII elephant; the cursor uncovers a small patch and guesses what it feels, and an optional expert's tag lists whole-animal facts">.</div></div> <div class="gnd-legend"> <span><b style="color:var(--hand)">hand</b> = GNN message passing: each atom only feels its neighbors</span> <span><b style="color:var(--tag)">tag</b> = expert-crafted descriptors: whole-molecule facts</span> </div> </div> <script>
 
 (function(){
 const ART=String.raw`                .-'''''''''''''''''''''''-.
@@ -222,61 +277,6 @@ function frame(t){
 function fit(){scn.style.fontSize=Math.min(13,wrap.clientWidth/(COLS*0.62)).toFixed(2)+'px'}
 function ptr(e){const r=scn.getBoundingClientRect();P={c:(e.clientX-r.left)/r.width*COLS,r:(e.clientY-r.top)/r.height*ROWS}}
 scn.addEventListener('pointermove',ptr);scn.addEventListener('pointerdown',ptr);scn.addEventListener('pointerleave',()=>{P=null});
-fit();window.addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);requestAnimationFrame(frame);
-})();
-
-</script> <style>.wlq{--fg:var(--global-text-color);--soft:var(--global-text-color-light);--line:var(--global-divider-color);--muted:#a3a19a;--panel:rgba(0,0,0,.035);--gold:#9a5a1c;--pyr:#7d7335;--bad:#c0392b;--ok:#0f7a5c;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;display:flex;flex-direction:column;gap:14px;margin:3rem 0 2rem;color:var(--fg)}html[data-theme="dark"] .wlq{--muted:#6c6a62;--panel:rgba(255,255,255,.06);--gold:#e0a35c;--pyr:#b0a565;--bad:#f09595;--ok:#5dcaa5}.wlq .wlq-head{display:flex;flex-direction:column;gap:6px}.wlq .wlq-head h2{margin:0;font-weight:400;text-wrap:balance}.wlq .wlq-head h2 span{color:var(--soft);font-weight:400}.wlq .wlq-head p{margin:0}.wlq .wlq-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:13px;color:var(--soft)}.wlq button{font:inherit;font-size:12px;font-weight:400;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:3px 10px;cursor:pointer;box-shadow:none}.wlq button:hover{border-color:var(--soft)}.wlq .wlq-wrap{width:100%;text-align:center;overflow:hidden}.wlq .wlq-scn{font-family:var(--mono);line-height:1.2;margin:0;white-space:pre;display:inline-block;text-align:left;user-select:none;cursor:default;color:var(--fg)}.wlq .wlq-g{color:var(--gold);font-weight:700}.wlq .wlq-p{color:var(--pyr)}.wlq .wlq-x{color:var(--bad);font-weight:700}.wlq .wlq-m{color:var(--muted)}.wlq .wlq-s{color:var(--soft)}.wlq .wlq-on{color:var(--fg);font-weight:700}.wlq .wlq-ok{color:var(--ok);font-weight:700}.wlq .wlq-legend{font-size:12px;color:var(--soft);display:flex;flex-wrap:wrap;gap:6px 16px}.wlq .wlq-legend b{font-weight:700;font-family:var(--mono)}.wlq button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}</style> <div class="wlq" id="wlq-root"> <div class="wlq-head"> <h2>WelQrate <span>(2024)</span> </h2> <p>While deep learning has revolutionized computer-aided drug discovery, the AI community has predominantly focused on model innovation and placed less emphasis on establishing best benchmarking practices. We posit that without a sound model evaluation framework, the AI community’s efforts cannot reach their full potential, thereby slowing the progress and transfer of innovation into real-world drug discovery. With collaborators at the Meiler Lab and the Network and Data Science Lab (Vanderbilt University), I created WelQrate, a gold-standard benchmark and data collection for small molecule drug discovery (<a href="https://papers.nips.cc/paper_files/paper/2024/file/5f2f8305cd1c5be7e8319aea306388ce-Paper-Datasets_and_Benchmarks_Track.pdf" target="_blank" rel="noopener" title="Liu, Dong, Wang et al. (2024). WelQrate: Defining the Gold Standard in Small Molecule Drug Discovery Benchmarking. NeurIPS 2024 Datasets and Benchmarks Track.">Liu et al., 2024</a>).</p> </div> <div class="wlq-ctl"> <span>Click a sieve to switch it on or off.</span> <button id="wlq-all" type="button">All sieves on</button> <button id="wlq-none" type="button">All off</button> </div> <div class="wlq-wrap" id="wlq-wrap"><div class="wlq-scn" id="wlq-scn" role="img" aria-label="Primary screen hits fall through curation sieves into a pan; switching sieves on removes false positives and raises the share of real actives">.</div></div> <div class="wlq-legend"> <span><b style="color:var(--gold)">*</b> real gold = validated active</span> <span><b style="color:var(--pyr)">+</b> fool's gold = false positive from the primary screen</span> <span><b style="color:var(--bad)">x</b> caught by a sieve</span> <span>Which sieve catches what is illustrative; the overall ratio follows AID 1798.</span> </div> </div> <script>
-
-(function(){
-const COLS=84,ROWS=21,X0=2,X1=31;
-const SIEVES=[{row:5,name:'confirmatory screen',on:false,why:'not confirmed'},{row:9,name:'counter screen',on:false,why:'wrong target'},{row:13,name:'PAINS filter',on:false,why:'interference'}];
-// share of primary-screen hits: ~1 in 10 is real (AID 1798: 1,665 hits -> 164 actives); the rest is split across the sieves
-const MIX=[['gold',.1],[0,.5],[1,.28],[2,.12]];
-const $=id=>document.getElementById('wlq-'+id);
-const scn=$('scn'),wrap=$('wrap');
-const ch=new Array(COLS*ROWS),cl=new Array(COLS*ROWS);
-let parts=[],stuck=[],pan=[],caught=[0,0,0],spawn=0,last=performance.now(),touched=false,autoT=0,autoStep=0;
-function put(c,r,g,k){if(c<0||c>=COLS||r<0||r>=ROWS)return;ch[r*COLS+c]=g;cl[r*COLS+c]=k}
-function text(c,r,s,k){for(let j=0;j<s.length;j++)put(c+j,r,s[j],k)}
-function bar(f,n){const k=Math.round(Math.max(0,Math.min(1,f))*n);return '#'.repeat(k)+'.'.repeat(n-k)}
-function pick(){let u=Math.random();for(const [t,w] of MIX){if(u<w)return t;u-=w}return 2}
-function setAll(v){SIEVES.forEach(s=>s.on=v);touched=true}
-$('all').onclick=()=>setAll(true);
-$('none').onclick=()=>setAll(false);
-function rowOf(e){const r=scn.getBoundingClientRect();return Math.floor((e.clientY-r.top)/r.height*ROWS)}
-scn.addEventListener('click',e=>{const row=rowOf(e),s=SIEVES.find(s=>s.row===row||s.row+1===row);if(s){s.on=!s.on;touched=true}});
-scn.addEventListener('pointermove',e=>{const row=rowOf(e);scn.style.cursor=SIEVES.some(s=>s.row===row||s.row+1===row)?'pointer':'default'});
-function frame(t){
-  const dt=Math.min(.05,Math.max(0,(t-last)/1000));last=t;
-  // until someone clicks, switch the sieves on one at a time, then start over
-  if(!touched){autoT+=dt;if(autoT>3.5){autoT=0;autoStep=(autoStep+1)%5;SIEVES.forEach((s,i)=>s.on=i<Math.min(autoStep,3))}}
-  spawn+=dt*18;while(spawn>=1){spawn--;parts.push({x:X0+1+Math.random()*(X1-X0-2),y:1.5,v:7+Math.random()*3,t:pick()})}
-  for(const p of parts){const y0=p.y;p.y+=p.v*dt;p.x+=Math.sin(t/300+p.v*7)*dt*.8;p.x=Math.max(X0+1,Math.min(X1-1,p.x));
-    for(let i=0;i<3;i++){const s=SIEVES[i];if(s.on&&p.t===i&&y0<s.row&&p.y>=s.row){p.dead=1;caught[i]++;stuck.push({x:p.x,row:s.row,life:1.4})}}
-    if(!p.dead&&p.y>=16){p.dead=1;pan.push(p.t==='gold'?'g':'p');if(pan.length>100)pan.shift()}}
-  parts=parts.filter(p=>!p.dead);
-  for(const s of stuck)s.life-=dt;stuck=stuck.filter(s=>s.life>0);
-  ch.fill(' ');cl.fill(0);
-  text(X0,0,'primary HTS "actives"   v v v','m');
-  for(let i=0;i<3;i++){const s=SIEVES[i];
-    for(let c=X0;c<=X1;c++)put(c,s.row,s.on?'=':(c%2?'-':' '),s.on?'on':'m');
-    text(X1+2,s.row,(s.on?'[x] ':'[ ] ')+s.name,s.on?'on':'s');
-    text(X1+6,s.row+1,s.on?'catches: '+s.why:'(open)',s.on?'s':'m')}
-  for(const p of parts)put(Math.round(p.x),Math.floor(p.y),p.t==='gold'?'*':'+',p.t==='gold'?'g':'p');
-  for(const s of stuck)put(Math.round(s.x),s.row,'x','x');
-  text(X0-1,16,'\\'+' '.repeat(X1-X0+1)+'/','s');
-  text(X0,17,'\\'+'_'.repeat(X1-X0-1)+'/','s');
-  const view=pan.slice(-(X1-X0-1));for(let i=0;i<view.length;i++)put(X0+1+i,16,view[i]==='g'?'*':'+',view[i]);
-  text(X0+1,18,'the pan = the dataset\'s "actives"','m');
-  text(0,20,'AID 1798: 63,676 screened -> 1,665 primary hits -> 164 validated actives (0.27%)','s');
-  const g=pan.filter(x=>x==='g').length,f=pan.length-g,pur=pan.length?g/pan.length:0,CX=60;
-  ['+----------------------+','| IN THE PAN, LAST 100 |','| real gold    *   '+String(g).padStart(3)+' |','| fool\'s gold  +   '+String(f).padStart(3)+' |','|                      |','| real actives         |','| ['+bar(pur,14)+'] '+String(Math.round(pur*100)).padStart(3)+'% |','+----------------------+','| caught by sieves     |','| confirmatory  '+String(caught[0]).padStart(6)+' |','| counter       '+String(caught[1]).padStart(6)+' |','| PAINS         '+String(caught[2]).padStart(6)+' |','+----------------------+'].forEach((s,i)=>text(CX,1+i,s,'s'));
-  text(CX+15,3,'*','g');text(CX+15,4,'+','p');text(CX+3,7,bar(pur,14),pur>.9?'ok':pur>.5?'g':'x');
-  text(CX,15,pur>.95?'clean labels: actives':'noisy labels: most',pur>.95?'ok':'x');
-  text(CX,16,pur>.95?'are really active':'"actives" are not',pur>.95?'ok':'x');
-  let h='';for(let r=0;r<ROWS;r++){let run='',k=-1;for(let c=0;c<COLS;c++){const i=r*COLS+c;if(cl[i]!==k){if(run)h+=k?'<span class="wlq-'+k+'">'+run+'</span>':run;run='';k=cl[i]}const gch=ch[i];run+=gch==='<'?'&lt;':gch==='>'?'&gt;':gch==='&'?'&amp;':gch}h+=k?'<span class="wlq-'+k+'">'+run+'</span>':run;if(r<ROWS-1)h+='\n'}
-  scn.innerHTML=h;requestAnimationFrame(frame)}
-function fit(){scn.style.fontSize=Math.min(13,wrap.clientWidth/(COLS*0.62)).toFixed(2)+'px'}
 fit();window.addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);requestAnimationFrame(frame);
 })();
 
